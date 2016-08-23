@@ -5,6 +5,7 @@ build/
 node_modules/
 .npm
 npm-debug.log*
+src/js/vendor/
 
 # Coverage directory used by tools like istanbul
 coverage/
