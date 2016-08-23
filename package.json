@@ -1,0 +1,44 @@
+{
+  "name": "vacondos",
+  "version": "1.0.0",
+  "description": "final project",
+  "main": "gruntfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "postinstall": "bower install && grunt build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vetfin/VA-Front-End.git"
+  },
+  "author": "Stella Ma",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Vetfin/VA-Front-End/issues"
+  },
+  "homepage": "https://github.com/Vetfin/VA-Front-End#readme",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-mocks": "^1.5.8",
+    "bower": "^1.7.9",
+    "chai": "^3.5.0",
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-karma": "^2.0.0",
+    "karma": "^1.2.0",
+    "karma-chai": "^0.1.0",
+    "karma-coverage": "^1.1.1",
+    "karma-mocha": "^1.1.1",
+    "mocha": "^3.0.2"
+  }
+}

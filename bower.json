@@ -1,0 +1,22 @@
+{
+  "name": "vacondos",
+  "description": "final project",
+  "main": "gruntfile.js",
+  "authors": [
+    "Stella Ma"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Vetfin/VA-Front-End",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/js/vendor/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "angular": "^1.5.8"
+  }
+}
