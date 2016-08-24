@@ -37,7 +37,6 @@
           });
 
           that.markers.push(marker);
-
         };
 
         var i;
