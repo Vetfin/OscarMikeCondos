@@ -47,7 +47,7 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: 'src/js/',
-                    src: ['vendor/angular/angular.min.js'],
+                    src: ['vendor/angular/angular.min.js', 'vendor/jquery/dist/jquery.min.js'],
                     dest: 'build/js/'
                 }]
             },
@@ -66,7 +66,7 @@ module.exports = function(grunt) {
                 options: {
                     sourceMap: true,
                 },
-                src: ['src/js/app/vacondos.module.js', 'src/js/**/*.js', '!src/js/vendor/**/*.js'],
+                src: ['src/js/app/vacondos.module.js', 'src/js/**/*.js', 'src/js/**/*.*.js', '!src/js/vendor/**/*.js'],
                 dest: 'build/js/main.js'
             }
         },
