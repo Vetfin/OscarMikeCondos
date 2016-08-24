@@ -24,15 +24,19 @@
             <h1>VA Condos For Sale</h1>
         </header>
 
+        <nav class='pageNav navbar navbar-inverse'>
+            <ul class='nav navbar-nav'>
+                <li><a ui-sref='home'>Home</a></li>
+                <li><a ui-sref='about'>About Us</a></li>
+                <li><a ui-sref='contact'>Contact</a></li>
+                <li><a ui-sref='login'>Login</a></li>
+                <li><a ui-sref='account'>Account</a></li>
+                <li><a ui-sref='logout'>Logout</a></li>
+            </ul>
+        </nav>
+
         <main>
-            <nav class='pageNav navbar navbar-inverse'>
-                <ul class='nav navbar-nav'>
-                    <li><a ui-sref='home'>Home</a></li>
-                    <li><a ui-sref='login'>Login</a></li>
-                    <li><a ui-sref='account'>Account</a></li>
-                    <li><a ui-sref='logout'>Logout</a></li>      
-                </ul>
-            </nav>
+
 
             <section>
 
@@ -48,8 +52,18 @@
             </section>
         </main>
 
-        <footer>
-            <p></p>
+        <footer class='navbar navbar-default navbar-fixed-bottom navbar-inverse'>
+            <ul class='footer'>
+                <li><a ui-sref='home'>Home</a></li>
+                <li><a ui-sref='about'>About Us</a></li>
+                <li><a ui-sref='contact'>Contact</a></li>
+                <ul class='social'>
+                    <li><a>Twitter</a></li>
+                    <li><a>Facebook</a></li>
+                    <li><a>Instagram</a></li>
+                </ul>
+            </ul>
+            <p>Copyright 2016 Erik Douglas and Stella Ma</p>
         </footer>
 
         <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js'></script>
