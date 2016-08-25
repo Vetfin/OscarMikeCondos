@@ -47,7 +47,11 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: 'src/js/',
-                    src: ['vendor/angular/angular.min.js', 'vendor/jquery/dist/jquery.min.js'],
+                    src: [
+                        'vendor/angular/angular.min.js',
+                        'vendor/jquery/dist/jquery.min.js',
+                        'vendor/angular-resource/angular-resource.min.js'
+                    ],
                     dest: 'build/js/'
                 }]
             },
