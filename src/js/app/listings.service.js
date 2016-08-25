@@ -2,9 +2,9 @@
     'use strict';
 
     angular.module('vacondos')
-        .factory('listings', ListingsService);
+        .factory('condos', CondosService);
 
-    function ListingsService() {
-
+    function CondosService($resource) {
+        return $resource('https://arcane-spire-51321.herokuapp.com/condos');
     }
 })();

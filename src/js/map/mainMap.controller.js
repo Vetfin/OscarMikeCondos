@@ -4,12 +4,15 @@
     angular.module('vacondos')
         .controller('MainMapController', MainMapController);
 
-    MainMapController.$inject = ['maps'];
+    MainMapController.$inject = ['maps', 'condos'];
 
-    function MainMapController(maps) {
+    function MainMapController(maps, condos) {
         var that = this;
 
         this.cities = maps.getExample();
+
+        this.condos = condos.query();
+        console.log(this.condos);
 
         var mapOptions = {
           zoom: 4,
