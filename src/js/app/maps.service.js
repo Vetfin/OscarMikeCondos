@@ -43,7 +43,7 @@
                           long : 80.250000
                       }
                   ];
-            return example; 
+            return example;
         }
     }
 })();
