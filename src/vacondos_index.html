@@ -166,14 +166,15 @@
             if (!window.angular) {
                 document.write(unescape('%3Cscript src="/js/vendor/angular/angular.js">%3C/script>'));
             }
+            if (!window.angular-resource) {
+                document.write(unescape('%3Cscript src="/js/vendor/angular-resource/angular-resource.min.js">%3C/script>'));
+            }
             if (!window.jQuery) {
                 document.write(unescape('%3Cscript src="/js/vendor/jquery/dist/jquery.min.js">%3C/script>'));
             }
         </script>
-        <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'>
-        </script>
-        <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyABvhW-nILCiy0MvU-ExFk68uqQc4SPl6I'>
-        </script>
+        <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+        <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyABvhW-nILCiy0MvU-ExFk68uqQc4SPl6I'></script>
 
         <script src='/js/main.js'></script>
 
