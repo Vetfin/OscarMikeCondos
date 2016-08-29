@@ -4,19 +4,18 @@
     angular.module('vacondos')
         .controller('SearchResultsController', SearchResultsController);
 
-    SearchResultsController.$inject = ['maps', 'condos'];
+    SearchResultsController.$inject = ['condos'];
 
-    function SearchResultsController(maps, condos) {
+    function SearchResultsController(condos) {
         var that = this;
-
-        this.cities = maps.getExample();
+        var infoWindow = new google.maps.InfoWindow();
 
         this.allCondos = condos.getAllCondos()
             .then(function(allCondos) {
                 that.condos = allCondos;
+                that.makeCondoMarkers(allCondos);
                 console.log('condos', that.condos);
             });
-
 
         /** DC LatLng: 38.907192, -77.036871 **/
         var mapOptions = {
@@ -28,15 +27,21 @@
 
         this.markers = [];
 
-        var infoWindow = new google.maps.InfoWindow();
+        this.makeCondoMarkers = function makeCondoMarkers(condoList) {
+            var i;
+            for (i = 0; i < condoList.length; i++){
+              that.createMarker(condoList[i]);
+            }
+        };
 
-        var createMarker = function (info){
+
+        this.createMarker = function createMarker(condo){
             var marker = new google.maps.Marker({
                 map: that.map,
-                position: new google.maps.LatLng(info.lat, info.long),
-                title: info.city
+                position: new google.maps.LatLng(condo.latitude, condo.longitude),
+                title: (condo.id).toString()
             });
-            marker.content = '<div class="infoWindowContent">' + info.desc + '</div>';
+            marker.content = '<div class="infoWindowContent">' + condo.address + '</div>';
 
             google.maps.event.addListener(marker, 'click', function(){
                 infoWindow.setContent('<h2>' + marker.title + '</h2>' + marker.content);
@@ -46,11 +51,6 @@
           that.markers.push(marker);
 
         };
-
-        var i;
-        for (i = 0; i < this.cities.length; i++){
-          createMarker(this.cities[i]);
-        }
 
         this.openInfoWindow = function(e, selectedMarker){
             e.preventDefault();
