@@ -5,7 +5,7 @@
         .factory('condos', CondosService);
 
     function CondosService($resource) {
-        return $resource('https://arcane-spire-51321.herokuapp.com/condos');
+        return $resource('https://arcane-spire-51321.herokuapp.com/condos.json');
     }
-    
+
 })();
