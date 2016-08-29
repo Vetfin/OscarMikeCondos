@@ -11,7 +11,7 @@
 
         this.cities = maps.getExample();
 
-        this.condos = condos.query();
+        this.condos = condos.get();
         console.log(this.condos);
 
         var mapOptions = {

@@ -70,50 +70,6 @@
         </nav>
 
         <main>
-            <section class='home'>
-                <form
-                    class='main-search'
-                    name='main-search'
-                    novalidate>
-                    <input
-                        class='form-control'
-                        type='text'
-                        name='zipcode'
-                        placeholder='zip code'
-                        required>
-                    <input
-                        class='form-control'
-                        type='text'
-                        name='address'
-                        placeholder='88 K St. NW Washington DC'
-                        required>
-                    <input class='btn btn-primary btn-sm' type='submit' value='Find My Condo'>
-                </form>
-            </section>
-
-            <section class='sign-up'>
-
-            </section>
-
-            <section class='about-us'>
-
-            </section>
-
-            <section class='contact'>
-
-            </section>
-
-            <section class='terms'>
-
-            </section>
-
-            <section class='login'>
-
-            </section>
-
-            <section class='my-account'>
-
-            </section>
 
             <section class='results' ng-controller='MainMapController as mmCtrl'>
                 <div id='map'></div>
@@ -165,9 +121,6 @@
         <script>
             if (!window.angular) {
                 document.write(unescape('%3Cscript src="/js/vendor/angular/angular.js">%3C/script>'));
-            }
-            if (!window.angular-resource) {
-                document.write(unescape('%3Cscript src="/js/vendor/angular-resource/angular-resource.min.js">%3C/script>'));
             }
             if (!window.jQuery) {
                 document.write(unescape('%3Cscript src="/js/vendor/jquery/dist/jquery.min.js">%3C/script>'));
