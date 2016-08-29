@@ -11,13 +11,17 @@
 
         this.cities = maps.getExample();
 
-        this.condos = condos.query();
-        console.log('condos', this.condos);
+        this.allCondos = condos.getAllCondos()
+            .then(function(allCondos) {
+                that.condos = allCondos;
+                console.log('condos', that.condos);
+            });
 
+
+        /** DC LatLng: 38.907192, -77.036871 **/
         var mapOptions = {
-          zoom: 4,
-          center: new google.maps.LatLng(25,80),
-          mapTypeId: google.maps.MapTypeId.TERRAIN
+          zoom: 13,
+          center: { lat: 38.907192, lng: -77.036871}
         };
 
         this.map = new google.maps.Map(document.getElementById('map'), mapOptions);

@@ -4,8 +4,21 @@
     angular.module('vacondos')
         .factory('condos', CondosService);
 
-    function CondosService($resource) {
-        return $resource('https://arcane-spire-51321.herokuapp.com/condos.json');
+    CondosService.$inject = ['$http'];
+
+    function CondosService($http) {
+        return {
+            getAllCondos: getAllCondos
+        };
+
+        function getAllCondos() {
+            return $http({
+                url: 'https://arcane-spire-51321.herokuapp.com/condos.json'
+            })
+            .then(function(response) {
+                return response.data;
+            });
+        }
     }
 
 })();
