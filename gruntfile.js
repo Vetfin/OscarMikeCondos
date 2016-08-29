@@ -59,8 +59,8 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: 'src/js/',
-                    src: ['**/*.html'],
-                    dest: 'build/js/templates/'
+                    src: ['templates/**/*.html'],
+                    dest: 'build/js/'
                 }]
             }
         },
@@ -85,7 +85,7 @@ module.exports = function(grunt) {
                 tasks: ['jshint', 'concat'] //add 'test' to middle
             },
             html: {
-                files: ['src/**/*.html'],
+                files: ['src/**/*.html', 'src/js/**/*.templates.html'],
                 tasks: ['copy:html', 'copy:templates']
             },
             images: {

@@ -7,4 +7,5 @@
     function CondosService($resource) {
         return $resource('https://arcane-spire-51321.herokuapp.com/condos');
     }
+    
 })();
