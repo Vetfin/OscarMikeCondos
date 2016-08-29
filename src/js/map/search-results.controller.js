@@ -2,17 +2,17 @@
     'use strict';
 
     angular.module('vacondos')
-        .controller('MainMapController', MainMapController);
+        .controller('SearchResultsController', SearchResultsController);
 
-    MainMapController.$inject = ['maps', 'condos'];
+    SearchResultsController.$inject = ['maps', 'condos'];
 
-    function MainMapController(maps, condos) {
+    function SearchResultsController(maps, condos) {
         var that = this;
 
         this.cities = maps.getExample();
 
         this.condos = condos.get();
-        console.log(this.condos);
+        console.log('condos', this.condos);
 
         var mapOptions = {
           zoom: 4,

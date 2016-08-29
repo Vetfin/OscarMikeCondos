@@ -17,6 +17,12 @@
                 controller: 'HomeController',
                 controllerAs: 'homeCtrl'
             })
+            .state('search-results', {
+                url: '/search-results',
+                templateUrl: '/js/templates/search-results.template.html',
+                controller: 'SearchResultsController',
+                controllerAs: 'resultsCtrl'
+            })
             .state('about-us', {
                 url: '/about-us',
                 templateUrl: '/js/templates/about-us.template.html',
@@ -37,21 +43,27 @@
             })
             .state('login', {
                 url: '/login',
-                templateUrl: '/js/templates/login.template.url',
+                templateUrl: '/js/templates/login.template.html',
                 controller: 'LoginController',
                 controllerAs: 'loginCtrl'
             })
             .state('contact', {
                 url: '/contact',
-                templateUrl: '/js/templates/contact.template.url',
+                templateUrl: '/js/templates/contact.template.html',
                 controller: 'ContactController',
                 controllerAs: 'contactCtrl'
             })
             .state('terms', {
                 url: '/terms',
-                templateUrl: '/js/templates/terms.template.url',
+                templateUrl: '/js/templates/terms.template.html',
                 controller: 'TermsController',
                 controllerAs: 'termsCtrl'
+            })
+            .state('va-info', {
+                url: '/terms',
+                templateUrl: '/js/templates/va-info.template.html',
+                controller: 'VaInfoController',
+                controllerAs: 'vaCtrl'
             });
     }
 
