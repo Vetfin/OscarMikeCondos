@@ -10,6 +10,8 @@
         var that = this;
         var infoWindow = new google.maps.InfoWindow();
 
+        this.searchZip = null;
+
         this.allCondos = condos.getAllCondos()
             .then(function(allCondos) {
                 that.condos = allCondos;
@@ -33,7 +35,6 @@
               that.createMarker(condoList[i]);
             }
         };
-
 
         this.createMarker = function createMarker(condo){
             var marker = new google.maps.Marker({
