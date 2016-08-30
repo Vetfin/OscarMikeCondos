@@ -8,11 +8,14 @@
 
     function SearchResultsController(condos) {
         var that = this;
-        // var infoWindow = new google.maps.InfoWindow();
+
 
         this.searchZip = null;
 
-        this.allCondos = condos.getAllCondos()
+        this.condos = [];
+        
+        condos
+            .getAllCondos()
             .then(function(allCondos) {
                 that.condos = allCondos;
                 // that.makeCondoMarkers(allCondos);
@@ -20,33 +23,6 @@
             });
 
         /** DC LatLng: 38.907192, -77.036871 **/
-
-
-        this.markers = [];
-
-        // this.makeCondoMarkers = function makeCondoMarkers(condoList) {
-        //     var i;
-        //     for (i = 0; i < condoList.length; i++){
-        //       that.createMarker(condoList[i]);
-        //     }
-        // };
-        //
-        // this.createMarker = function createMarker(condo){
-        //     var marker = new google.maps.Marker({
-        //         map: that.map,
-        //         position: new google.maps.LatLng(condo.latitude, condo.longitude),
-        //         title: (condo.id).toString()
-        //     });
-        //     marker.content = '<div class="infoWindowContent">' + condo.address + '</div>';
-        //
-        //     google.maps.event.addListener(marker, 'click', function(){
-        //         infoWindow.setContent('<h2>' + marker.title + '</h2>' + marker.content);
-        //         infoWindow.open(that.map, marker);
-        //   });
-        //
-        //   that.markers.push(marker);
-
-        // };
 
         // this.openInfoWindow = function(e, selectedMarker){
         //     e.preventDefault();
