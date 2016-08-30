@@ -16,9 +16,6 @@
             return $http({
                 url: 'https://arcane-spire-51321.herokuapp.com/condos.json',
                 method: 'get'
-            })
-            .then(function(response) {
-                return response.data;
             });
         }
 
@@ -36,9 +33,6 @@
                     max_bath: paramObj.max_bath,
                     zip: paramObj.zip
                 }
-            })
-            .then(function(response) {
-                return response.data;
             });
         }
 
