@@ -5,6 +5,7 @@
     <form
         class='main-search form-inline'
         name='main-search'
+        ng-submit='resultsCtrl.getForSaleCondos'
         novalidate>
 
         <div class='price form-group'>
@@ -15,6 +16,7 @@
                 id='min-price'
                 type='text'
                 name='min-price'
+                ng-model='resultsCtrl.searchParams.min_price'
                 placeholder='0'
                 >
             <label for='max-price'>Max $</label>
@@ -23,7 +25,8 @@
                 id='max-price'
                 type='text'
                 name='max-price'
-                placeholder='10000000000000'
+                ng-model='resultsCtrl.searchParams.max_price'
+                placeholder='No Max'
                 >
         </div>
 
@@ -35,6 +38,7 @@
                 id='min-bed'
                 type='text'
                 name='min-bed'
+                ng-model='resultsCtrl.searchParams.min_bed'
                 placeholder='0'
                 >
             <label for='max-bed'>Max</label>
@@ -42,7 +46,8 @@
                 class='max form-control'
                 id='max-bed'
                 type='text'
-                name='max-price'>
+                name='max-price'
+                ng-model='resultsCtrl.searchParams.max_bed'>
         </div>
 
         <div class='bath form-group'>
@@ -53,15 +58,15 @@
                 id='min-bath'
                 type='text'
                 name='min-bath'
-                placeholder='0'
-                >
+                ng-model='resultsCtrl.searchParams.min_bath'
+                placeholder='0'>
             <label for='max-bath'>Max</label>
             <input
                 class='max form-control'
                 id='max-bath'
                 type='text'
                 name='max-bath'
-                >
+                ng-model='resultsCtrl.searchParams.max_bath'>
         </div>
 
         <div class='parking'>
@@ -84,8 +89,11 @@
             class='zip from-control'
             type='text'
             name='search-zipcode'
-            placeholder='zip code'
-            required>
-        <input class='btn btn-primary btn-sm' type='submit' value='Find My Condo'>
+            ng-submit='resultsCtrl.searchParams.zip'
+            placeholder='zip code'>
+        <input
+            class='btn btn-primary btn-sm'
+            type='submit'
+            value='Find My Condo'>
     </form>
 </section>
