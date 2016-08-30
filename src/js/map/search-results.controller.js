@@ -15,7 +15,7 @@
         this.allCondos = condos.getAllCondos()
             .then(function(allCondos) {
                 that.condos = allCondos;
-                that.makeCondoMarkers(allCondos);
+                // that.makeCondoMarkers(allCondos);
                 console.log('condos', that.condos);
             });
 

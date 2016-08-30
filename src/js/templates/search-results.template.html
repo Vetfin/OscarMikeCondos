@@ -1,12 +1,9 @@
 <section class='search-results'>
     <div id='map'></div>
 
-    <aside id='repeat' ng-repeat='marker in resultsCtrl.markers | orderBy : "title"'>
-        <a
-            id='country_container'
-            href='#' ng-click='resultsCtrl.openInfoWindow($event, marker)'>
-            <label id='names'>{{marker.title}}</label>
-        </a>
-    </aside>
+    <markerList
+        id='repeat'
+        ng-repeat='marker in resultsCtrl.markers | orderBy : "title"'>
+    </markerList>
 
 </section>
