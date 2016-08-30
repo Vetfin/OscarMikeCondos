@@ -13,10 +13,11 @@ a {
     text-decoration: none;
 }
 
-#map {
+.map {
     height: 500px;
     width: 500px;
     border: 1px solid black;
+    display: block;
   }
 
   #repeat {
