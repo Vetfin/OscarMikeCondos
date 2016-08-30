@@ -20,6 +20,16 @@ a {
     display: block;
   }
 
-.form-control {
-    width: 20%; 
+form {
+
+    div {
+        margin-top: 2%;
+    };
+
+    input {
+        width: 20%;
+    };
+
+    width: 80%;
+
 }

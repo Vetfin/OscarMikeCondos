@@ -1,19 +1,90 @@
 <section class='home' ng-controller='SearchResultsController as resultsCtrl'>
+    <h2>Find your VA loan approved condo in DC!</h2>
+
+    <h3>Search Options: </h3>
     <form
-        class='main-search'
+        class='main-search form-inline'
         name='main-search'
         novalidate>
+
+        <div class='price form-group'>
+            <label>Price: </label>
+            <label for='min-price'>Min $</label>
+            <input
+                class='min form-control'
+                id='min-price'
+                type='text'
+                name='min-price'
+                placeholder='0'
+                >
+            <label for='max-price'>Max $</label>
+            <input
+                class='max form-control'
+                id='max-price'
+                type='text'
+                name='max-price'
+                placeholder='10000000000000'
+                >
+        </div>
+
+        <div class='bed form-group'>
+            <label>Bedrooms: </label>
+            <label for='min-bed'>Min</label>
+            <input
+                class='min form-control'
+                id='min-bed'
+                type='text'
+                name='min-bed'
+                placeholder='0'
+                >
+            <label for='max-bed'>Max</label>
+            <input
+                class='max form-control'
+                id='max-bed'
+                type='text'
+                name='max-price'>
+        </div>
+
+        <div class='bath form-group'>
+            <label>Bathrooms: </label>
+            <label for='min-bath'>Min</label>
+            <input
+                class='min form-control'
+                id='min-bath'
+                type='text'
+                name='min-bath'
+                placeholder='0'
+                >
+            <label for='max-bath'>Max</label>
+            <input
+                class='max form-control'
+                id='max-bath'
+                type='text'
+                name='max-bath'
+                >
+        </div>
+
+        <div class='parking'>
+            <label for='parking'>Offstreet Parking: </label>
+            <label for='parking-yes'>Yes</label>
+            <input
+                class=''
+                id='parking-yes'
+                type='radio'
+                name='parking'>
+
+            <label for='parking-no'>No</label>
+            <input
+                class=''
+                id='parking-no'
+                type='radio'
+                name='parking'>
+        </div>
         <input
-            class='form-control'
+            class='zip from-control'
             type='text'
             name='search-zipcode'
             placeholder='zip code'
-            required>
-        <input
-            class='form-control'
-            type='text'
-            name='search-address'
-            placeholder='City, State'
             required>
         <input class='btn btn-primary btn-sm' type='submit' value='Find My Condo'>
     </form>
