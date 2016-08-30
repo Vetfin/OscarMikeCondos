@@ -17,7 +17,6 @@
             max_bed: null,
             min_bath: 0,
             max_bath: null,
-            parking: null,
             zip: null
         };
 
