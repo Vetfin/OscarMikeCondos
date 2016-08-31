@@ -1,12 +1,6 @@
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
 
 body {
     font: bold 12px Arial;
-
 }
 
 a {
@@ -31,6 +25,18 @@ a {
     };
 
     width: 80%;
-    border: 2px solid black; 
+    border: 2px solid black;
 
+}
+
+.search-results {
+    width: 100%;
+
+    section {
+        float: left;
+    }
+
+    map {
+        float:left;
+    }
 }
