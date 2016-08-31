@@ -28,10 +28,18 @@
 
             /** Once array has been updates, then create markers **/
             scope.$watchCollection('condos', function(condos) {
-                condos.forEach(createMarker);
+                if (!condos.data) {
+                    condos.forEach(createMarker);
+                    console.log(condos);
+                } else {
+                    condos.data.forEach(createMarker);
+                    console.log(condos);
+                }
+
             });
 
             function createMarker(condo){
+                console.log('in createMarker');
                 var marker = new google.maps.Marker({
                     map: newMap,
                     position: new google.maps.LatLng(condo.latitude, condo.longitude),

@@ -21,7 +21,7 @@
 
         this.goToResults = function searchSpecific() {
             condos
-                .getAllCondos()
+                .getAllCondos(that.searchParams)
                 .then(function(data) {
                     console.log('in then for goToResults', data);
                     $state.go('search-results', {searchInputs: that.searchParams});
