@@ -15,7 +15,10 @@
         function getAllCondos() {
             return $http({
                 url: 'https://arcane-spire-51321.herokuapp.com/addresses.json',
-                method: 'get'
+                method: 'get',
+                params: {
+                    min_price: 42
+                }
             });
         }
 

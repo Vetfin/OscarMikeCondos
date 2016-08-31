@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    angular.module('vacondos', ['ui.router', 'ngResource'])
+    angular.module('vacondos', ['ui.router'])
         .config(vacondosConfig);
 
     vacondosConfig.$inject = ['$stateProvider', '$urlRouterProvider'];

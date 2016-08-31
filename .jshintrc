@@ -73,9 +73,13 @@
     "phantom"       : true,     // PhantomJS
 
 
+
     // Custom Globals
     "globals"       : {
         "angular"   : true,
-        "google"    : true
+        "google"    : true,
+        "module"    : true,
+        "inject"    : true,
+        "chai"      : true
     }                        // additional predefined global variables
 }
