@@ -16,6 +16,9 @@ a {
   }
 
 .main-search {
+    width: 50%;
+    border: 2px solid black;
+    margin: 0 auto;
 
     div {
         margin-top: 2%;
@@ -24,9 +27,6 @@ a {
     input {
         width: 20%;
     };
-
-    width: 80%;
-    border: 2px solid black;
 
 }
 
