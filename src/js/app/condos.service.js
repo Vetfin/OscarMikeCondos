@@ -8,6 +8,7 @@
 
     function CondosService($http) {
         var condosForSale = [];
+        var allApprovedBuildings = [];
 
         return {
             getAllAddresses: getAllAddresses,
@@ -24,7 +25,7 @@
                 url: 'https://arcane-spire-51321.herokuapp.com/addresses.json'
             })
             .then(function(results) {
-                condosForSale = results.data;
+                allApprovedBuildings = results.data;
                 return results;
             });
         }
@@ -35,7 +36,7 @@
             })
             .then(function(results) {
                 condosForSale = results.data;
-                return results; 
+                return results;
             });
         }
 
