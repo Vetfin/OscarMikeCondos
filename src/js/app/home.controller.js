@@ -19,13 +19,24 @@
             zip: null
         };
 
-        this.goToResults = function goToSearchResults() {
-            condos.getAllCondos()
+        this.goToResults = function searchSpecific() {
+            condos
+                .getAllCondos()
                 .then(function(data) {
                     console.log('in then for goToResults', data);
                     $state.go('search-results', {searchInputs: that.searchParams});
                 });
         };
+
+        this.goToAll = function searchAll() {
+            condos
+                .getAllAddresses()
+                .then(function(data) {
+                    console.log('in then for goToAll', data);
+                    $state.go('search-results', {searchInputs: that.searchParams});
+                });
+        };
+
     }
 
 })();

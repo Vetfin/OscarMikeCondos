@@ -23,19 +23,15 @@
 
             var newMap = new google.maps.Map(element[0], mapOptions);
 
-            /** Create markers and info windows with condo info **/
+            /** Instantiate infoWindow object **/
             var infoWindow = new google.maps.InfoWindow();
 
-            console.log(scope.condos);
-
-            // once the array has been updated, THEN create our markers
-
+            /** Once array has been updates, then create markers **/
             scope.$watchCollection('condos', function(condos) {
                 condos.forEach(createMarker);
             });
 
             function createMarker(condo){
-                console.log('createMarker', condo);
                 var marker = new google.maps.Marker({
                     map: newMap,
                     position: new google.maps.LatLng(condo.latitude, condo.longitude),

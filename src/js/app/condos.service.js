@@ -7,17 +7,16 @@
     CondosService.$inject = ['$http'];
 
     function CondosService($http) {
-        var condosForSale = [];
-        var approvedBuildings = [];
+        var searchResults = [];
 
         return {
             getAllAddresses: getAllAddresses,
             getAllCondos: getAllCondos,
-            allCondosForSale: allCondosForSale
+            getSearchResults: getSearchResults
         };
 
-        function allCondosForSale() {
-            return condosForSale;
+        function getSearchResults() {
+            return searchResults;
         }
 
         function getAllAddresses() {
@@ -25,7 +24,7 @@
                 url: 'https://arcane-spire-51321.herokuapp.com/addresses.json'
             })
             .then(function(results) {
-                approvedBuildings = results.data;
+                searchResults = results.data;
                 return results;
             });
         }
@@ -35,7 +34,7 @@
                 url: 'https://arcane-spire-51321.herokuapp.com/condos.json'
             })
             .then(function(results) {
-                condosForSale = results;
+                searchResults = results;
                 return results;
             });
         }
