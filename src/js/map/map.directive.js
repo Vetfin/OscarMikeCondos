@@ -26,7 +26,7 @@
             /** Create markers and info windows with condo info **/
             var infoWindow = new google.maps.InfoWindow();
 
-            console.log(scope.condos.length);
+            console.log(scope.condos);
 
             // once the array has been updated, THEN create our markers
 
