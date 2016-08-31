@@ -14,7 +14,7 @@
 
         function getAllCondos() {
             return $http({
-                url: 'https://arcane-spire-51321.herokuapp.com/condos.json',
+                url: 'https://arcane-spire-51321.herokuapp.com/addresses.json',
                 method: 'get'
             });
         }

@@ -4,11 +4,10 @@
     angular.module('vacondos')
         .controller('SearchResultsController', SearchResultsController);
 
-    SearchResultsController.$inject = ['condos'];
+    SearchResultsController.$inject = ['$state', 'condos'];
 
-    function SearchResultsController(condos) {
+    function SearchResultsController($state, condos) {
         var that = this;
-
 
         this.searchParams = {
             min_price: 0,
@@ -27,6 +26,7 @@
                 .getCondosForSale(that.searchParams)
                 .then(function(condosForSale) {
                     that.condos = condosForSale;
+                    $state.go('search-results');
                     console.log('returned condos for sale', that.condos);
                 });
         };
@@ -36,7 +36,7 @@
                 .getAllCondos()
                 .then(function(allApprovedBuildings) {
                     that.condos = allApprovedBuildings;
-                    // that.makeCondoMarkers(allCondos);
+                    $state.go('search-results');
                     console.log('returned all buildings', that.condos);
                 });
         };
