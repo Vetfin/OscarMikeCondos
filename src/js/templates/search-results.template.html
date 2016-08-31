@@ -1,5 +1,30 @@
 <section class='search-results'>
 
+    <section>
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        Condo Id
+                    </th>
+                    <th>
+                        Address
+                    </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr ng-repeat='condo in resultsCtrl.results'>
+                    <td>
+                        {{condo.id}}
+                    </td>
+                    <td>
+                        {{condo.address}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
     <map
         class='map'
         id='map'
