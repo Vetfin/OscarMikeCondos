@@ -8,7 +8,7 @@
 
     function SearchResultsController($stateParams, condos) {
 
-        this.results = condos.getCondos();
+        this.results = condos.allCondosForSale();
 
         this.searchParams = $stateParams.searchInputs;
         console.log('search params from home', this.searchParams);

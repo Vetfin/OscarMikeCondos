@@ -8,15 +8,15 @@
 
     function CondosService($http) {
         var condosForSale = [];
-        var allApprovedBuildings = [];
+        var approvedBuildings = [];
 
         return {
             getAllAddresses: getAllAddresses,
             getAllCondos: getAllCondos,
-            getCondos: getCondos
+            allCondosForSale: allCondosForSale
         };
 
-        function getCondos() {
+        function allCondosForSale() {
             return condosForSale;
         }
 
@@ -25,7 +25,7 @@
                 url: 'https://arcane-spire-51321.herokuapp.com/addresses.json'
             })
             .then(function(results) {
-                allApprovedBuildings = results.data;
+                approvedBuildings = results.data;
                 return results;
             });
         }
@@ -35,7 +35,7 @@
                 url: 'https://arcane-spire-51321.herokuapp.com/condos.json'
             })
             .then(function(results) {
-                condosForSale = results.data;
+                condosForSale = results;
                 return results;
             });
         }
