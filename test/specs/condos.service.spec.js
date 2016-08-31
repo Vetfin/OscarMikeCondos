@@ -21,7 +21,7 @@
         }));
 
         test('condos service functions exist', function() {
-            assert.isFunction(condos.getAllCondos, 'getAllCondos fn exists');
+            assert.isFunction(condos.getAllAddresses, 'getAllAddresses fn exists');
         });
 
     });

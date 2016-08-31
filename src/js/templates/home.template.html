@@ -1,11 +1,11 @@
-<section class='home' ng-controller='SearchResultsController as resultsCtrl'>
+<section class='home'>
     <h2>Find your VA loan approved condo in DC!</h2>
 
     <h3>Search Options: </h3>
     <form
         class='main-search form-inline'
         name='main-search'
-        ng-submit='resultsCtrl.getAllBuildings()'
+        ng-submit='homeCtrl.goToResults(searchParams)'
         novalidate>
 
         <div class='price form-group'>
@@ -14,18 +14,18 @@
             <input
                 class='min form-control'
                 id='min-price'
-                type='text'
+                type='number'
                 name='min-price'
-                ng-model='resultsCtrl.searchParams.min_price'
+                ng-model='homeCtrl.searchParams.min_price'
                 placeholder='0'
                 >
             <label for='max-price'>Max $</label>
             <input
                 class='max form-control'
                 id='max-price'
-                type='text'
+                type='number'
                 name='max-price'
-                ng-model='resultsCtrl.searchParams.max_price'
+                ng-model='homeCtrl.searchParams.max_price'
                 placeholder='No Max'
                 >
         </div>
@@ -36,18 +36,18 @@
             <input
                 class='min form-control'
                 id='min-bed'
-                type='text'
+                type='number'
                 name='min-bed'
-                ng-model='resultsCtrl.searchParams.min_bed'
+                ng-model='homeCtrl.searchParams.min_bed'
                 placeholder='0'
                 >
             <label for='max-bed'>Max</label>
             <input
                 class='max form-control'
                 id='max-bed'
-                type='text'
+                type='number'
                 name='max-price'
-                ng-model='resultsCtrl.searchParams.max_bed'>
+                ng-model='homeCtrl.searchParams.max_bed'>
         </div>
 
         <div class='bath form-group'>
@@ -56,17 +56,17 @@
             <input
                 class='min form-control'
                 id='min-bath'
-                type='text'
+                type='number'
                 name='min-bath'
-                ng-model='resultsCtrl.searchParams.min_bath'
+                ng-model='homeCtrl.searchParams.min_bath'
                 placeholder='0'>
             <label for='max-bath'>Max</label>
             <input
                 class='max form-control'
                 id='max-bath'
-                type='text'
+                type='number'
                 name='max-bath'
-                ng-model='resultsCtrl.searchParams.max_bath'>
+                ng-model='homeCtrl.searchParams.max_bath'>
         </div>
 
         <div class='parking'>
@@ -87,9 +87,9 @@
         </div>
         <input
             class='zip from-control'
-            type='text'
+            type='number'
             name='search-zipcode'
-            ng-submit='resultsCtrl.searchParams.zip'
+            ng-submit='homeCtrl.searchParams.zip'
             placeholder='zip code'>
         <input
             class='btn btn-primary btn-sm'

@@ -21,7 +21,10 @@
                 url: '/search-results',
                 templateUrl: '/js/templates/search-results.template.html',
                 controller: 'SearchResultsController',
-                controllerAs: 'resultsCtrl'
+                controllerAs: 'resultsCtrl',
+                params: {
+                    searchInputs: null
+                }
             })
             .state('about-us', {
                 url: '/about-us',
