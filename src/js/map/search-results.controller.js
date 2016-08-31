@@ -11,10 +11,7 @@
         this.results = condos.getCondos();
 
         this.searchParams = $stateParams.searchInputs;
-        console.log(this.searchParams);
-
-
-        /** DC LatLng: 38.907192, -77.036871 **/
+        console.log('search params from home', this.searchParams);
 
         this.openInfoWindow = function(e, selectedMarker){
             e.preventDefault();
@@ -24,3 +21,4 @@
     }
 
 })();
+/** DC LatLng: 38.907192, -77.036871 **/

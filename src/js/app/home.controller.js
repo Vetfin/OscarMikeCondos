@@ -20,8 +20,9 @@
         };
 
         this.goToResults = function goToSearchResults() {
-            condos.getAllCondos()
-                .then(function() {
+            condos.getAllAddresses()
+                .then(function(data) {
+                    console.log(data);
                     $state.go('search-results', {searchInputs: that.searchParams});
                 });
         };

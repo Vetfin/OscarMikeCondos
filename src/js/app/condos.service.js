@@ -25,6 +25,7 @@
             })
             .then(function(results) {
                 condosForSale = results.data;
+                return results;
             });
         }
 
@@ -34,6 +35,7 @@
             })
             .then(function(results) {
                 condosForSale = results.data;
+                return results; 
             });
         }
 
