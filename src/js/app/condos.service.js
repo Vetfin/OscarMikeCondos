@@ -31,6 +31,7 @@
          */
         function getAllAddresses() {
             return $http({
+                method: 'get',
                 url: 'https://arcane-spire-51321.herokuapp.com/addresses.json'
             })
             .then(function(results) {
