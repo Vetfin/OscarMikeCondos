@@ -25,6 +25,9 @@
                 .then(function(data) {
                     console.log('in then for goToResults', data);
                     $state.go('search-results', {searchInputs: that.searchParams});
+                })
+                .catch(function(response) {
+                    console.error(response.status, 'error');
                 });
         };
 
@@ -34,6 +37,9 @@
                 .then(function(data) {
                     console.log('in then for goToAll', data);
                     $state.go('search-results', {searchInputs: that.searchParams});
+                })
+                .catch(function(response) {
+                    console.error(response.status, 'error');
                 });
         };
 
