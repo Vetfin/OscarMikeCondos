@@ -15,10 +15,20 @@
             getSearchResults: getSearchResults
         };
 
+        /**
+         * Get search result data
+         * @return {Array}      Search results for
+         *                      condos or addresses
+         */
         function getSearchResults() {
             return searchResults;
         }
 
+        /**
+         * Get all VA approved addresses
+         * @return {Promise}    XMLHttpRequest obj that can
+         * implement promise methods
+         */
         function getAllAddresses() {
             return $http({
                 url: 'https://arcane-spire-51321.herokuapp.com/addresses.json'
@@ -29,8 +39,13 @@
             });
         }
 
+        /**
+         * Get currently for sale VA approved condo units
+         * @param  {Obj} paramObj Search inputs
+         * @return {Promise}      XMLHttpRequest object that can
+         * implement promise methods
+         */
         function getAllCondos(paramObj) {
-            console.log(paramObj);
             return $http({
                 url: 'https://arcane-spire-51321.herokuapp.com/condos/search.json',
                 method: 'get',
