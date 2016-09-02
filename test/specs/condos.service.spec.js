@@ -4,13 +4,14 @@
     var assert = chai.assert;
 
     suite('condos service', function() {
-        var condos, $httpBackend;
+        var $rootScope, $httpBackend, condos;
 
         setup(module('vacondos'));
 
-        setup(inject(function(_condos_, _$httpBackend_) {
-            condos = _condos_;
+        setup(inject(function(_$rootScope_, _$httpBackend_, _condos_) {
+            $rootScope = _$rootScope_;
             $httpBackend = _$httpBackend_;
+            condos = _condos_;
 
             $httpBackend
                 .whenGET('https://arcane-spire-51321.herokuapp.com/buildings.json')
@@ -109,5 +110,25 @@
             $httpBackend.flush();
         });
 
+        test('getAllCondos returns error promise with no arguments', function(done) {
+            var returnVal = condos.getAllCondos();
+
+            assert.isObject(returnVal, 'getAllCondos returns an object');
+            assert.isFunction(returnVal.then, 'result has a then method');
+            assert.isFunction(returnVal.catch, 'result has a catch method');
+
+            returnVal
+                .then(function(response) {
+                    console.log(response);
+                    assert.isFail('should not be in then');
+                    done();
+                })
+                .catch(function(err) {
+                    assert.instanceOf(err, Error, 'err should be a type of error');
+                    done();
+                });
+
+            $rootScope.$digest();
+        });
     });
 })();

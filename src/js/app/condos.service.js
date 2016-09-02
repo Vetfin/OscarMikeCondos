@@ -4,9 +4,9 @@
     angular.module('vacondos')
         .factory('condos', CondosService);
 
-    CondosService.$inject = ['$http'];
+    CondosService.$inject = ['$http', '$q'];
 
-    function CondosService($http) {
+    function CondosService($http, $q) {
         var searchResults = [];
 
         return {
@@ -47,6 +47,29 @@
          * implement promise methods
          */
         function getAllCondos(paramObj) {
+            if (!paramObj) {
+                return $q.reject(new Error('You must use our search page to return condo listings'));
+            }
+            //
+            // if (
+            //     typeof(paramObj.min_price) !== 'number' ||
+            //     typeof(paramObj.max_price) !== 'number' ||
+            //     typeof(paramObj.min_bed) !== 'number' ||
+            //     typeof(paramObj.max_bed) !== 'number' ||
+            //     typeof(paramObj.min_bath) !== 'number' ||
+            //     typeof(paramObj.max_bath) !== 'number' ||
+            //     typeof(paramObj.zip) !== 'number' ||
+            //     paramObj.min_price !== null ||
+            //     paramObj.max_price !== null ||
+            //     paramObj.min_bed !== null ||
+            //     paramObj.max_bed !== null ||
+            //     paramObj.min_bath !== null||
+            //     paramObj.max_bath !== null ||
+            //     paramObj.zip !== null
+            // ) {
+            //     return $q.reject(new Error('Inputs are invalid'));
+            // }
+
             return $http({
                 url: 'https://arcane-spire-51321.herokuapp.com/condos/search.json',
                 method: 'get',
