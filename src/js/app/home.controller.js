@@ -40,13 +40,18 @@
 
         this.goToAll = function searchAll() {
             condos
-                .getAllAddresses()
+                .getAllBuildings()
                 .then(function(data) {
                     console.log('in then for goToAll', data);
                     $state.go('search-results', {searchInputs: that.searchParams});
                 })
-                .catch(function(response) {
-                    console.error(response.status, 'error');
+                .catch(function(err) {
+                    console.error(err.status);
+                    if (err.status >= 400 && err.status < 500) {
+                        that.message = 'Unable to retrieve buildings, check your inputs';
+                    } else if (err.status >= 500 && err.status < 600) {
+                        that.message = 'Oops! Something went wrong on our side. Hold wait one then try again';
+                    }
                 });
         };
 
