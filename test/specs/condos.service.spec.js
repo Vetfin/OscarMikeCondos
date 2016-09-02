@@ -82,8 +82,17 @@
             $httpBackend.flush();
         });
 
-        test('getAllCondos successfully returns condos with no inputs', function(done) {
-            var returnVal = condos.getAllCondos({ min_price: 0, min_bed: 0, min_bath: 0 });
+        test('getAllCondos successfully returns condos with default inputs', function(done) {
+            var returnVal = condos
+                .getAllCondos({
+                    min_price: 0,
+                    max_price: null,
+                    min_bed: 0,
+                    max_bed: null,
+                    min_bath: 0,
+                    max_bath: null,
+                    zip: null
+                });
 
             assert.isObject(returnVal, 'getAllCondos returns an object');
             assert.isFunction(returnVal.then, 'result has a then method');
@@ -110,7 +119,7 @@
             $httpBackend.flush();
         });
 
-        test('getAllCondos returns error promise with no arguments', function(done) {
+        test('getAllCondos returns error promise with no argument', function(done) {
             var returnVal = condos.getAllCondos();
 
             assert.isObject(returnVal, 'getAllCondos returns an object');
