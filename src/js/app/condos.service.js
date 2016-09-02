@@ -10,7 +10,7 @@
         var searchResults = [];
 
         return {
-            getAllAddresses: getAllAddresses,
+            getAllBuildings: getAllBuildings,
             getAllCondos: getAllCondos,
             getSearchResults: getSearchResults
         };
@@ -25,14 +25,14 @@
         }
 
         /**
-         * Get all VA approved addresses
+         * Get all VA approved buildings
          * @return {Promise}    XMLHttpRequest obj that can
          * implement promise methods
          */
-        function getAllAddresses() {
+        function getAllBuildings() {
             return $http({
                 method: 'get',
-                url: 'https://arcane-spire-51321.herokuapp.com/addresses.json'
+                url: 'https://arcane-spire-51321.herokuapp.com/buildings.json'
             })
             .then(function(results) {
                 searchResults = results.data;
@@ -42,7 +42,7 @@
 
         /**
          * Get currently for sale VA approved condo units
-         * @param  {Obj} paramObj Search inputs
+         * @param  {Object} paramObj Search inputs
          * @return {Promise}      XMLHttpRequest object that can
          * implement promise methods
          */
