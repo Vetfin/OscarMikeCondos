@@ -9,11 +9,13 @@
     function HomeController($state, $location, condos) {
         var that = this;
 
+        /** Error message area **/
         this.message = '';
 
+        /** Home path should be server **/
         this.path = $location.host();
-        console.log(this.path);
 
+        /** Search inputs from homepage **/
         this.searchParams = {
             min_price: 0,
             max_price: null,
@@ -24,6 +26,11 @@
             zip: null
         };
 
+        /**
+         * Search for specific condos with params
+         * and go to search-results view
+         * @return {void}
+         */
         this.goToResults = function searchSpecific() {
             condos
                 .getAllCondos(that.searchParams)
@@ -41,6 +48,11 @@
                 });
         };
 
+        /**
+         * Search for all VA approved buildings
+         * and go to search-results view
+         * @return {void}
+         */
         this.goToAll = function searchAll() {
             condos
                 .getAllBuildings()
