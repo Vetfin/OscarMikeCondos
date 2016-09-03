@@ -94,5 +94,17 @@
             assert.property(params, 'zip', 'searchParams has zip');
         });
 
+        test('searchParams has valid inputs', function() {
+            var params = homeController.searchParams;
+
+            assert.isNumber(params.min_price, 'min_price is a number');
+            assert.isDefined(params.max_price, 'max_price is not undefined');
+            assert.isNumber(params.min_bed, 'min_bed is a number');
+            assert.isDefined(params.max_bed, 'max_bed is not undefined');
+            assert.isNumber(params.min_bath, 'min_bath is a number');
+            assert.isDefined(params.max_bath, 'max_bath is not undefined');
+            assert.isDefined(params.zip, 'zip is not undefined');
+        });
+
     });
 })();
