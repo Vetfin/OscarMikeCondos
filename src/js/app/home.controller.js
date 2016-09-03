@@ -4,12 +4,15 @@
     angular.module('vacondos')
         .controller('HomeController', HomeController);
 
-    HomeController.$inject = ['$state', 'condos'];
+    HomeController.$inject = ['$state', '$location', 'condos'];
 
-    function HomeController($state, condos) {
+    function HomeController($state, $location, condos) {
         var that = this;
 
-        this.message = null;
+        this.message = '';
+
+        this.path = $location.host();
+        console.log(this.path);
 
         this.searchParams = {
             min_price: 0,
