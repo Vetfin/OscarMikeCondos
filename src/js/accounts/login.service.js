@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('vacondos')
-        .factory('login', LoginService);
+        .factory('loginService', LoginService);
 
     function LoginService() {
         var currentUser = null;
