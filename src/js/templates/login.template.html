@@ -1,4 +1,28 @@
 <section class='login'>
     <h3>Login</h3>
 
+    <div class='login-area'>
+        <form
+            class='login-form'
+            name='login-form'
+            ng-submit='loginCtrl.authenticate()'
+            novalidate>
+            <input
+                type='email'
+                name='login-email'
+                ng-model='loginCtrl.userInfo.email'
+                placeholder='email'
+                required>
+            <input
+                type='password'
+                name='login-password'
+                ng-model='loginCtrl.userInfo.password'
+                placeholder='password'
+                min-length='8'
+                required>
+            <input class='login-btn btn btn-primary btn-sm' type='submit' value='login'>
+        </form>
+
+    </div>
+
 </section>
