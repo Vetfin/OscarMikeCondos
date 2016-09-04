@@ -1,9 +1,9 @@
 {
   "name": "vacondos",
-  "description": "final project",
-  "main": "gruntfile.js",
+  "description": "Find VA approved condos for sale",
+  "main": "index.js",
   "authors": [
-    "Stella Ma"
+    "Erik Douglas and Stella Ma"
   ],
   "license": "MIT",
   "homepage": "https://github.com/Vetfin/VA-Front-End",

@@ -1,8 +1,8 @@
 {
   "name": "vacondos",
   "version": "1.0.0",
-  "description": "final project",
-  "main": "gruntfile.js",
+  "description": "Find VA approved condos for sale",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
@@ -14,7 +14,7 @@
     "type": "git",
     "url": "git+https://github.com/Vetfin/VA-Front-End.git"
   },
-  "author": "Stella Ma",
+  "author": "Stella Ma and Erik Douglas",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Vetfin/VA-Front-End/issues"
@@ -23,6 +23,7 @@
   "dependencies": {
     "angular": "^1.5.8",
     "angular-mocks": "^1.5.8",
+    "angular-ui-router": "^0.3.1",
     "bower": "^1.7.9",
     "chai": "^3.5.0",
     "grunt": "^1.0.1",
@@ -39,6 +40,8 @@
     "karma-chai": "^0.1.0",
     "karma-coverage": "^1.1.1",
     "karma-mocha": "^1.1.1",
-    "mocha": "^3.0.2"
+    "karma-phantomjs-launcher": "^1.0.2",
+    "mocha": "^3.0.2",
+    "phantomjs-prebuilt": "^2.1.12"
   }
 }

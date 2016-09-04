@@ -1,0 +1,24 @@
+.search-results {
+    width: 100%;
+    margin: 0 auto;
+
+    .results-table {
+        width: 50%;
+        margin: 0 auto;
+        float: left;
+        overflow: auto;
+        height: 600px;
+    }
+
+    map {
+        width: 50%;
+        margin: 0 auto;
+        float:right;
+    }
+}
+
+.map {
+    height: 600px;
+    width: 50%;
+    display: block;
+  }

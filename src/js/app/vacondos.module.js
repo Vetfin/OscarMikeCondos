@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    angular.module('vacondos', ['ui.router', 'ngResource'])
+    angular.module('vacondos', ['ui.router'])
         .config(vacondosConfig);
 
     vacondosConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
@@ -21,7 +21,10 @@
                 url: '/search-results',
                 templateUrl: '/js/templates/search-results.template.html',
                 controller: 'SearchResultsController',
-                controllerAs: 'resultsCtrl'
+                controllerAs: 'resultsCtrl',
+                params: {
+                    searchInputs: null
+                }
             })
             .state('about-us', {
                 url: '/about-us',

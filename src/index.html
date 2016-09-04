@@ -31,23 +31,34 @@
                         <span class='icon-bar'></span>
                         <span class='icon-bar'></span>
                     </button>
-                    <a class='navbar-brand' ui-sref='home'>VA Condos For Sale</a>
+                    <a class='navbar-brand' ui-sref='home'>
+                        <!-- Apartment icon by Icons8 -->
+                        <img
+                            class="icon" id='icons8-Apartment'
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAABw0
+                            lEQVRoQ+1abVHEMBB9pwAkgAMkIAEJoAAcAAoABeAAJCABByABFMC8I51Jy7Xd7b3l5trNH36QvOR9
+                            7KZzkxWmjXMAd2XpDYCHaTB/Vl0CIB7HJNyV8yCHAB4BnHXWvQC4APDpxGumy3A9hE4APAM46jn0RyH
+                            16iR1WkSS4FoJXVdRGDsvo3I7Nqn8X447RohRoCtU0TPoEiNI1zYNusHoqnExRIh1wk1JaspgPZEU66
+                            seUbjrPfoIsYNdTWGxYc19FUFGTI3bakRdQix8usK/yvFWwCJwmYIGv+XQtlFQCuDBakW7duh9oCV7N
+                            tjFXDaf424Nfe/iJMI91+bUDi2GULdx9BG3zmtMsc53zbM45AKsIjTmuBrXHDn1xulQp3EMRt4SOWEj
+                            CoUyRy70FELwJCQUMwQqHQqRVQhqdijvoaJ6fin0xM+VEMvF6gLch285Yd2GQpmbQugphOBJSChmCFQ6
+                            FCKrENTs0OzadhLKT59fBbb9ecxcQ8K6DYVKQqHyCsDTIYGIoRDLdSgv1rxY//linV3kQluTEHy5XU4oY
+                            ijU/B3ii4yDUA3jwL+aR1Z1B+OzSz402jdSJMMHUU/U6wfU8Zs1a8amOQAAAABJRU5ErkJggg=="
+                            width="52"
+                            height="52">
+                        VA Condos For Sale
+                    </a>
                 </div>
 
                 <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
                     <ul class='nav navbar-nav'>
                         <li><a ui-sref='search-results'>Search Results</a></li>
                         <li><a ui-sref='about-us'>About Us</a></li>
-                        <li><a ui-sref='contact'>Contact</a></li>
-                        <li><a ui-sref='create-account'>Create Account</a></li>
                         <li><a ui-sref='va-info'>VA Info</a></li>
-                        <li><a ui-sref='login'>Login</a></li>
                     </ul>
                     <ul class='nav navbar-nav navbar-right'>
-
                         <li class='dropdown'>
                             <a
-                                href='#'
                                 class='dropdown-toggle'
                                 data-toggle='dropdown'
                                 role='button'
@@ -55,13 +66,12 @@
                                 <span class='caret'></span>
                             </a>
                             <ul class='dropdown-menu' role='menu'>
-                                <li><a href='#'>Action</a></li>
-                                <li><a href='#'>Another action</a></li>
-                                <li><a href='#'>Something else here</a></li>
+                                <li><a ui-sref='login'>Login</a></li>
+                                <li><a ui-sref='create-account'>Create Account</a></li>
                                 <li class='divider'></li>
-                                <li><a href='#'>Separated link</a></li>
+                                <li><a ui-sref='contact'>Contact</a></li>
                                 <li class='divider'></li>
-                                <li><a href='#'>One more separated link</a></li>
+                                <li><a href='#'>Logout</a></li>
                             </ul>
                         </li>
 
@@ -100,7 +110,10 @@
                     </ul>
                 </div>
             </div>
-            <p>Copyright &#169 2016 Copyright Holder All Rights Reserved.</p>
+            <p>
+                Copyright &#169 2016 Copyright Holder All Rights Reserved.
+                <a href="https://icons8.com">Icon pack by Icons8</a>
+            </p>
         </footer>
 
         <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js'></script>
