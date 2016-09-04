@@ -1,5 +1,5 @@
 .search-results {
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
 
     .results-table {
@@ -16,3 +16,9 @@
         float:right;
     }
 }
+
+.map {
+    height: 600px;
+    width: 50%;
+    display: block;
+  }
