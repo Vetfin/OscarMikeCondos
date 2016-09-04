@@ -1,0 +1,18 @@
+.search-results {
+    width: 90%;
+    margin: 0 auto;
+
+    section {
+        width: 50%;
+        margin: 0 auto;
+        float: left;
+        overflow: auto;
+        height: 600px;
+    }
+
+    map {
+        width: 50%;
+        margin: 0 auto;
+        float:right;
+    }
+}
