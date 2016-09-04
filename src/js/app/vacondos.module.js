@@ -35,14 +35,14 @@
             .state('create-account', {
                 url: '/create-account',
                 templateUrl: '/js/templates/create-account.template.html',
-                controller: 'CreateAccountController',
-                controllerAs: 'createAccountCtrl'
+                controller: 'AccountController',
+                controllerAs: 'accountCtrl'
             })
             .state('my-account', {
                 url: '/my-account',
                 templateUrl: '/js/templates/my-account.template.html',
-                controller: 'MyAccountController',
-                controllerAs: 'myAccountCtrl'
+                controller: 'AccountController',
+                controllerAs: 'accountCtrl'
             })
             .state('login', {
                 url: '/login',
