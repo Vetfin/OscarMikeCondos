@@ -1,3 +1,44 @@
 <section class='create-account'>
+    <h2 class='create-account-title'>Create User</h3>
 
+    <form
+        class='create-account-form'
+        novalidate
+        name='create-account'
+        ng-submit='createAccountCtrl.createAccount()'
+        >
+        <input
+            class='first-name form-control'
+            type='text'
+            name='first-name'
+            ng-model='createAccountCtrl.userInfo.nameFirst'
+            placeholder='First Name'
+            required>
+        <input
+            class='last-name form-control'
+            type='text'
+            name='last-name'
+            ng-model='createAccountCtrl.userInfo.nameLast'
+            placeholder='Last Name'
+            required>
+        <input
+            class='user-email form-control'
+            type='email'
+            name='user-email'
+            ng-model='createAccountCtrl.userInfo.email'
+            placeholder='example@email.com'
+            required>
+        <input
+            class='user-password form-control'
+            type='password'
+            name='user-password'
+            ng-model='createAccountCtrl.userInfo.password'
+            placeholder='password'
+            required>
+        <input class='btn btn-primary btn-sm' type='submit' value='Create Account'>
+    </form>
+
+    <p class='new-author-msg alert alert-warning' ng-show='createAccountCtrl.message'>
+        {{createAccountCtrl.message}}
+    </p>
 </section>
