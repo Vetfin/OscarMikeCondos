@@ -38,15 +38,21 @@
 
             });
 
-            function createMarker(condo){
+            /**
+             * Create map marker w/ info window for each location with lat/lng
+             * and adds info window content
+             * @param  {Object} location Location data (condo or building)
+             * @return {void}
+             */
+            function createMarker(location){
                 console.log('in createMarker');
                 var marker = new google.maps.Marker({
                     map: newMap,
-                    position: new google.maps.LatLng(condo.latitude, condo.longitude),
-                    title: (condo.id).toString()
+                    position: new google.maps.LatLng(location.latitude, location.longitude),
+                    title: (location.id).toString()
                 });
 
-                marker.content = '<div class="infoWindowContent">' + condo.address + '</div>';
+                marker.content = '<div class="infoWindowContent">' + location.address + '</div>';
 
                 google.maps.event.addListener(marker, 'click', function(){
                     infoWindow.setContent('<h2>' + marker.title + '</h2>' + marker.content);
