@@ -1,63 +1,34 @@
-<section class='search-results' style='margin:0'>
+<section class='search-results'>
 
-    <div id="fountainTextG">
-        <div id="fountainTextG_1" class="fountainTextG">H</div>
-        <div id="fountainTextG_2" class="fountainTextG">O</div>
-        <div id="fountainTextG_3" class="fountainTextG">L</div>
-        <div id="fountainTextG_4" class="fountainTextG">D</div>
-        <div id="fountainTextG_5" class="fountainTextG"> </div>
-        <div id="fountainTextG_6" class="fountainTextG">W</div>
-        <div id="fountainTextG_7" class="fountainTextG">A</div>
-        <div id="fountainTextG_8" class="fountainTextG">I</div>
-        <div id="fountainTextG_9" class="fountainTextG">T</div>
-        <div id="fountainTextG_10" class="fountainTextG"> </div>
-        <div id="fountainTextG_11" class="fountainTextG">O</div>
-        <div id="fountainTextG_12" class="fountainTextG">N</div>
-        <div id="fountainTextG_13" class="fountainTextG">E</div>
+    <div class='table-responsive'>
+        <table class='table table-striped table-hover table-condensed'>
+            <thead>
+                <tr class=''>
+                    <th class=''>
+                        Id
+                    </th>
+                    <th class='address-field'>
+                        Address
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat='condo in resultsCtrl.results'>
+                    <td>
+                        {{condo.id}}
+                    </td>
+                    <td>
+                        {{condo.address}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
-    <div id='searchContent' style='display:none' class='animate-bottom'>
-        <div class='table-responsive'>
-            <table class='table table-striped table-hover table-condensed'>
-                <thead>
-                    <tr class=''>
-                        <th class=''>
-                            Id
-                        </th>
-                        <th class='address-field'>
-                            Address
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat='condo in resultsCtrl.results'>
-                        <td>
-                            {{condo.id}}
-                        </td>
-                        <td>
-                            {{condo.address}}
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <map
-            class='map'
-            id='map'
-            condos='resultsCtrl.results'>
-        </map>
-    </div>
-
-    <script type='text/javascript'>
-        var show;
-        window.onload = function showResults() {
-            show = setTimeout(showPage, 3000)
-        };
-
-        function showPage() {
-            document.getElementById('fountainTextG').style.display = 'none';
-            document.getElementById('searchContent').style.display = 'block';
-        }
-    </script>
+    <map
+        class='map'
+        id='map'
+        condos='resultsCtrl.results'>
+    </map>
+    
 </section>
