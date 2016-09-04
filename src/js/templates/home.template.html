@@ -1,16 +1,16 @@
 <section class='home'>
-    <h2>Find your VA loan approved condo in DC!</h2>
+    <h2 class='home-title'>Find your VA loan approved condo in DC!</h2>
 
     <h3>Search Options: </h3>
     <h4 class='home-error'>{{homeCtrl.message}}</h4>
     <form
-        class='main-search form-inline'
+        class='main-search form-group'
         name='main-search'
         ng-submit='homeCtrl.goToResults()'
         novalidate>
 
-        <div class='price form-group'>
-            <label>Price: </label>
+        <div class='price form-inline'>
+            <label class='input-types'>Price: </label>
             <label for='min-price'>Min $</label>
             <input
                 class='min form-control'
@@ -31,8 +31,8 @@
                 >
         </div>
 
-        <div class='bed form-group'>
-            <label>Bedrooms: </label>
+        <div class='bed form-inline'>
+            <label class='input-types'>Bedrooms: </label>
             <label for='min-bed'>Min</label>
             <input
                 class='min form-control'
@@ -51,8 +51,8 @@
                 ng-model='homeCtrl.searchParams.max_bed'>
         </div>
 
-        <div class='bath form-group'>
-            <label>Bathrooms: </label>
+        <div class='bath form-inline'>
+            <label class='input-types'>Bathrooms: </label>
             <label for='min-bath'>Min</label>
             <input
                 class='min form-control'
@@ -71,7 +71,9 @@
         </div>
 
         <div class='parking'>
-            <label for='parking'>Offstreet Parking: </label>
+            <label for='parking' class='input-types'>
+                Offstreet Parking:
+            </label>
             <label for='parking-yes'>Yes</label>
             <input
                 class=''
@@ -86,14 +88,21 @@
                 type='radio'
                 name='parking'>
         </div>
+        <div class='zipcode'>
+            <label for='zip' class='input-types'>
+                Zipcode:
+            </label>
+            <input
+                class='zip from-control'
+                id='zip'
+                type='number'
+                name='search-zipcode'
+                ng-submit='homeCtrl.searchParams.zip'
+                placeholder='zip code'>
+        </div>
+
         <input
-            class='zip from-control'
-            type='number'
-            name='search-zipcode'
-            ng-submit='homeCtrl.searchParams.zip'
-            placeholder='zip code'>
-        <input
-            class='btn btn-primary btn-sm'
+            class='condo-submit btn btn-primary btn-block'
             type='submit'
             value='Find My Condo'>
     </form>
@@ -101,7 +110,7 @@
     <h2>OR</h2>
 
     <button
-        class='btn btn-info btn-lg'
+        class='btn btn-info btn-large'
         type='button'
         name='get-all'
         ng-click='homeCtrl.goToAll()'>
