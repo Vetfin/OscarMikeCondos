@@ -35,16 +35,23 @@ body {
     background-color: #f9f9f9;
     min-width: 300px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    font-size: 10px;
+
+    a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    input {
+        width: 100px;
+    }
 }
 
-.filter-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
+.filter-content a:hover {
+    background-color: #f1f1f1
 }
-
-.filter-content a:hover {background-color: #f1f1f1}
 
 .filter-dropdown:hover .filter-content {
     display: block;
@@ -52,4 +59,10 @@ body {
 
 .filter-dropdown:hover .filter-btn {
     background-color: #3e8e41;
+}
+
+.filter-fields {
+    display: inline;
+    position: absolute;
+    right: 0;
 }
