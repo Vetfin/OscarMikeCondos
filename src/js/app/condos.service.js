@@ -50,7 +50,7 @@
             if (!paramObj) {
                 return $q.reject(new Error('You must use our search page to return condo listings'));
             }
-            console.log(paramObj);
+            console.log('in condos service fn', paramObj);
 
             if (
                 (typeof(paramObj.min_price) !== 'number') ||
