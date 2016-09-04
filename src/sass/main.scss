@@ -7,6 +7,11 @@ a {
     text-decoration: none;
 }
 
+.navbar {
+    border-radius: 0;
+    margin-bottom: 0;
+}
+
 .map {
     height: 500px;
     width: 500px;
@@ -57,12 +62,20 @@ a {
     text-align: center;
     width: 100%;
     height: 800px;
+
+    h2 {
+        font-size: 45px;
+        font-weight: bold;
+        padding-top: 1em;
+        color: white;
+        text-shadow: 1px 1px 2px black;
+    }
 }
 
 .login-outer {
     background-color: rgba(105, 105, 105, 0.9);
     width: 300px;
-    height: 250px;
+    height: 300px;
     margin: 0 auto;
     vertical-align: middle;
     position: absolute;
@@ -81,9 +94,10 @@ a {
     h3  {
         font-size: 4em;
         text-shadow: 1px 1px 2px white;
+        margin-top: 10%;
     }
     form {
-
+        padding: 10px;
     }
 
 }
