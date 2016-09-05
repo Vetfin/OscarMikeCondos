@@ -47,8 +47,8 @@
             .state('login', {
                 url: '/login',
                 templateUrl: '/js/templates/login.template.html',
-                controller: 'LoginController',
-                controllerAs: 'loginCtrl'
+                controller: 'AuthorizationController',
+                controllerAs: 'authCtrl'
             })
             .state('contact', {
                 url: '/contact',
