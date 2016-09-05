@@ -43,23 +43,21 @@
                 <div class='price'>
                     <label class='filter-inputs'>Price: </label>
                     <div class='filter-fields'>
-                        <label for='min-price'>Min </label>
                         <input
                             class='min'
                             id='min-price'
                             type='number'
                             name='min-price'
                             ng-model='homeCtrl.searchParams.min_price'
-                            placeholder='0'
+                            placeholder='Min Price'
                             >
-                        <label for='max-price'>Max </label>
                         <input
                             class='max'
                             id='max-price'
                             type='number'
                             name='max-price'
                             ng-model='homeCtrl.searchParams.max_price'
-                            placeholder='No Max'
+                            placeholder='Max Price'
                             >
                     </div>
 
@@ -68,43 +66,41 @@
                 <div class='bed'>
                     <label class='filter-inputs'>Bedrooms: </label>
                     <div class='filter-fields'>
-                        <label for='min-bed'>Min</label>
                         <input
                             class='min'
                             id='min-bed'
                             type='number'
                             name='min-bed'
                             ng-model='homeCtrl.searchParams.min_bed'
-                            placeholder='0'
+                            placeholder='Min Bed'
                             >
-                        <label for='max-bed'>Max</label>
                         <input
                             class='max'
                             id='max-bed'
                             type='number'
                             name='max-price'
-                            ng-model='homeCtrl.searchParams.max_bed'>
+                            ng-model='homeCtrl.searchParams.max_bed'
+                            placeholder='Max Bed'>
                     </div>
                 </div>
 
                 <div class='bath'>
                     <label class='filter-inputs'>Bathrooms: </label>
                     <div class='filter-fields'>
-                        <label for='min-bath'>Min</label>
                         <input
                             class='min'
                             id='min-bath'
                             type='number'
                             name='min-bath'
                             ng-model='homeCtrl.searchParams.min_bath'
-                            placeholder='0'>
-                        <label for='max-bath'>Max</label>
+                            placeholder='Min Bath'>
                         <input
                             class='max'
                             id='max-bath'
                             type='number'
                             name='max-bath'
-                            ng-model='homeCtrl.searchParams.max_bath'>
+                            ng-model='homeCtrl.searchParams.max_bath'
+                            placeholder='Max Bath'>
                     </div>
                 </div>
 
@@ -139,18 +135,15 @@
                             type='number'
                             name='search-zipcode'
                             ng-submit='homeCtrl.searchParams.zip'
-                            placeholder='zip code'>
+                            placeholder='Zip Code'>
                     </div>
                 </div>
 
                 <input
-                    class='btn btn-primary btn-sm btn-block'
+                    class='filter-submit btn btn-primary btn-sm btn-block'
                     type='submit'
                     value='Find My Condo'>
             </form>
-            <!-- <a href="#">Price</a>
-            <a href="#">Zipcode</a>
-            <a href="#">Link 3</a> -->
         </div>
     </div>
 
