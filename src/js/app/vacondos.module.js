@@ -32,8 +32,8 @@
                 controller: 'CondoInfoController',
                 controllerAs: 'condoInfoCtrl',
                 params: {
+                    condoId: null,
                     address: null
-                    // condoId: null TODO use this? 
                 }
             })
             .state('about-us', {
