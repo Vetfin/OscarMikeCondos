@@ -12,6 +12,8 @@
 
         this.message = null;
 
+        this.loggedInUser = {};
+
         this.loggedIn = function loggedIn() {
             return auth.isLoggedIn();
         };
@@ -22,7 +24,8 @@
             console.log('start auth');
             auth.login(that.userInfo.email, that.userInfo.password)
                 .then(function(currentUser) {
-                    console.log('logged in user', currentUser);
+                    that.loggedInUser = currentUser;
+                    console.log('loggedInUser', that.loggedInUser);
                     $state.go('home');
                 })
                 .catch(function(response) {
