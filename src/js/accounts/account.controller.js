@@ -4,9 +4,9 @@
     angular.module('vacondos')
         .controller('AccountController', AccountController);
 
-    AccountController.$inject = ['user'];
+    AccountController.$inject = ['$state', 'user'];
 
-    function AccountController(user) {
+    function AccountController($state, user) {
         console.log('in account ctrl');
 
         var that = this;
@@ -19,7 +19,7 @@
 
         this.createAccount = function createAccount() {
             console.log('start creating new account');
-
+            console.log('userInfo', that.userInfo);
             user.createUser(
                 that.userInfo.nameFirst,
                 that.userInfo.nameLast,
@@ -37,6 +37,10 @@
             });
 
             that.userInfo = {};
+
+            this.goToHome = function goToHome() {
+                $state.go('home');
+            };
 
             //TODO do not show create account after this
         };
