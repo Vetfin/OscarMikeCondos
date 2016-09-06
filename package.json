@@ -8,7 +8,8 @@
   },
   "scripts": {
     "postinstall": "bower install && grunt build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "grunt test",
+    "start": "http-server ./build/ -p $PORT"
   },
   "repository": {
     "type": "git",
