@@ -4,11 +4,18 @@
     angular.module('vacondos')
         .controller('SearchResultsController', SearchResultsController);
 
-    SearchResultsController.$inject = ['$stateParams', 'condos'];
+    SearchResultsController.$inject = ['$stateParams', '$state', 'condos'];
 
-    function SearchResultsController($stateParams, condos) {
+    function SearchResultsController($stateParams, $state, condos) {
+        var that = this;
+
+        this.message = null;
         /** Assign retrieved data here to use in map directive **/
         this.results = condos.getSearchResults();
+
+        if (this.results.length === 0 || !this.results) {
+            that.message = 'No searches currently, go to home'; 
+        }
 
         /** Save search inputs from home **/
         this.searchParams = $stateParams.searchInputs;
