@@ -76,7 +76,10 @@
                                 <li class='divider'></li>
                                 <li><a ui-sref='contact'>Contact</a></li>
                                 <li><a ui-sref='create-account'>Create Account</a></li>
-                                <li><a href='#'>Logout</a></li>
+                                <li
+                                    ng-controller='LogoutController as logoutCtrl'>
+                                    <a ui-sref='login' ng-click='logoutCtrl.logOut()'>Logout</a>
+                                </li>
                             </ul>
                         </li>
 

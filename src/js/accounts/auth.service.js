@@ -1,21 +1,34 @@
 (function() {
     'use strict';
 
+    var EMAIL_REGEX = /[^@\s]+@.+\..+/;
+
     angular.module('vacondos')
         .factory('auth', AuthorizationService);
 
-    AuthorizationService.$inject = ['$http'];
+    AuthorizationService.$inject = ['$http', '$q'];
 
-    function AuthorizationService($http) {
+    function AuthorizationService($http, $q) {
         var loggedInUser = null;
         var userId = null;
 
         return {
             login: login,
-            logout: logout
+            logout: logout,
+            getLoggedInUser: getLoggedInUser,
+            isLoggedIn: isLoggedIn
         };
 
         function login(loginEmail, loginPassword) {
+            if (typeof( loginEmail ) !== 'string' ||
+                !EMAIL_REGEX.test(loginEmail)) {
+                return loginError('Please enter a valid email address.');
+            } else if (
+                typeof( loginPassword ) !== 'string' ||
+                loginPassword.length < 8) {
+                return loginError('Please enter a valid password.');
+            }
+
             return $http({
                 url: 'https://arcane-spire-51321.herokuapp.com/sessions.json',
                 method: 'post',
@@ -24,8 +37,10 @@
                     'Accept': 'json'
                 },
                 data: angular.toJson({
-                    'email': loginEmail,
-                    'password': loginPassword
+                    user: {
+                        'email': loginEmail,
+                        'password': loginPassword
+                    }
                 })
             })
             .then(function(user) {
@@ -41,9 +56,23 @@
             });
         }
 
+        function getLoggedInUser() {
+            return loggedInUser;
+        }
+
+        function isLoggedIn() {
+            return !!userId;
+        }
+
         function logout() {
-            console.log('logout');
-            //TODO remove any current user, local storage or api key info
+            console.log('in logout');
+            loggedInUser = null;
+            userId = null;
+            localStorage.removeItem('loggedInUser');
+        }
+
+        function loginError(message) {
+            return $q.reject(new Error(message));
         }
     }
 })();
