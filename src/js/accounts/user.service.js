@@ -15,24 +15,26 @@
 
         function createUser(nameFirst, nameLast, userEmail, userPassword) {
             console.log('in create user');
-            var thisPassword;
-            if (!userPassword) {
-                thisPassword = null;
-            }
-            console.log('thisPassword', thisPassword);
+            // var thisPassword;
+            // if (!userPassword) {
+            //     thisPassword = null;
+            // }
+            // console.log('thisPassword', thisPassword);
             //TODO Add $q.reject for if statement
             return $http({
-                url: 'https://arcane-spire-51321.herokuapp.com/users',
+                url: 'https://arcane-spire-51321.herokuapp.com/users.json',
                 method: 'post',
                 headers: {
                     'Content-Type': 'application/json',
                     'accept': 'json'
                 },
                 data: angular.toJson({
-                    'first_name': nameFirst,
-                    'last_name': nameLast,
-                    'email': userEmail,
-                    'password_digest': thisPassword
+                    'user': {
+                        'first_name': nameFirst,
+                        'last_name': nameLast,
+                        'email': userEmail,
+                        'password': userPassword
+                    }
                 })
             })
             .then(function functionName(user) {
