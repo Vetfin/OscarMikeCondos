@@ -57,7 +57,7 @@
                         '<div class="infoWindowContent">\
                             <a class="marker-address">' + location.address + '</a>\
                         </div>';
-                } else {                    
+                } else {
                     var park;
 
                     if (location.parking === true) {
@@ -68,7 +68,7 @@
 
                     marker.content =
                         '<div class="infoWindowContent">\
-                            <a class="marker-address">' + location.address + '</a>\
+                            <a class="marker-address">' + location.formatted_address + '</a>\
                             <ul>\
                                 <li>Price: ' + location.price + '</li>\
                                 <li>Sq Ft: ' + location.sq_ft + '</li>\
