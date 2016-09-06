@@ -4,18 +4,41 @@
     angular.module('vacondos')
         .factory('auth', AuthorizationService);
 
-    function AuthorizationService() {
-        var currentUser = null;
+    AuthorizationService.$inject = ['$http'];
+
+    function AuthorizationService($http) {
+        var loggedInUser = null;
+        var userId = null;
 
         return {
             login: login,
             logout: logout
         };
 
-        function login(email, password) {
-            console.log('login', email, password);
-            //TODO add $http here
-            currentUser = {}; //TODO assign returned user object here
+        function login(loginEmail, loginPassword) {
+            return $http({
+                url: 'https://arcane-spire-51321.herokuapp.com/sessions.json',
+                method: 'post',
+                header: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'json'
+                },
+                data: angular.toJson({
+                    'email': loginEmail,
+                    'password': loginPassword
+                })
+            })
+            .then(function(user) {
+                loggedInUser = user.data;
+                userId = user.data.id;
+                console.log('loggedin user', loggedInUser);
+                localStorage
+                    .setItem('loggedInUser', angular.toJson({
+                        email: loginEmail,
+                        user_id: userId
+                    }));
+                return loggedInUser;
+            });
         }
 
         function logout() {
