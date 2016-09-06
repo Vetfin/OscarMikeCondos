@@ -18,15 +18,18 @@
             console.log(nameFirst, nameLast, userEmail, userPassword);
             //TODO Add $q.reject for if statement
             return $http({
-                url: 'https://tiy-blog-api.herokuapp.com/api/users',
+                url: 'https://arcane-spire-51321.herokuapp.com/users',
                 method: 'post',
-                dataType: 'json',
-                params: {
-                    first_name: nameFirst,
-                    last_name: nameLast,
-                    email: userEmail
+                headers: {
+                    'Content-Type': 'application/json',
+                    'accept': 'json'
+                },
+                data: angular.toJson({
+                    'first_name': nameFirst,
+                    'last_name': nameLast,
+                    'email': userEmail
                     // password_digest: userPassword
-                }
+                })
             })
             .then(function functionName(user) {
                 currentUser = user.data;
