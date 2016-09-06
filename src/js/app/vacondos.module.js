@@ -38,9 +38,7 @@
             })
             .state('about-us', {
                 url: '/about-us',
-                templateUrl: '/js/templates/about-us.template.html',
-                controller: 'AboutUsController',
-                controllerAs: 'aboutUsCtrl'
+                templateUrl: '/js/templates/about-us.template.html'
             })
             .state('create-account', {
                 url: '/create-account',
@@ -63,26 +61,20 @@
             .state('login', {
                 url: '/login',
                 templateUrl: '/js/templates/login.template.html',
-                controller: 'AuthorizationController',
-                controllerAs: 'authCtrl'
+                controller: 'LoginController',
+                controllerAs: 'loginCtrl'
             })
             .state('contact', {
                 url: '/contact',
-                templateUrl: '/js/templates/contact.template.html',
-                controller: 'ContactController',
-                controllerAs: 'contactCtrl'
+                templateUrl: '/js/templates/contact.template.html'
             })
             .state('terms', {
                 url: '/terms',
-                templateUrl: '/js/templates/terms.template.html',
-                controller: 'TermsController',
-                controllerAs: 'termsCtrl'
+                templateUrl: '/js/templates/terms.template.html'
             })
             .state('va-info', {
                 url: '/terms',
-                templateUrl: '/js/templates/va-info.template.html',
-                controller: 'VaInfoController',
-                controllerAs: 'vaCtrl'
+                templateUrl: '/js/templates/va-info.template.html'
             });
     }
 

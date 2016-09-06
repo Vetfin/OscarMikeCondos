@@ -1,42 +1,45 @@
 <section class='login'>
 
-    <p class='login-msg'>Login to save your favorites and searches!</p>
+    <main>
+        <p class='login-msg'>Login to save your favorites and searches!</p>
 
-    <div class='login-outer'>
+        <div class='login-outer'>
 
-        <div class='login-inner'>
+            <div class='login-inner'>
 
-            <h3>Login</h3>
+                <h3>Login</h3>
 
-            <form
-                class='login-form form-group'
-                name='login-form'
-                ng-submit='loginCtrl.authenticate()'
-                novalidate>
-                <input
-                    class='form-control'
-                    type='email'
-                    name='login-email'
-                    ng-model='loginCtrl.userInfo.email'
-                    placeholder='email'
-                    required>
-                <input
-                    class='form-control'
-                    type='password'
-                    name='login-password'
-                    ng-model='loginCtrl.userInfo.password'
-                    placeholder='password'
-                    min-length='8'
-                    required>
-                <input class='login-btn btn btn-primary' type='submit' value='login'>
-            </form>
+                <form
+                    class='login-form form-group'
+                    name='login-form'
+                    ng-submit='loginCtrl.authenticate()'
+                    novalidate>
+                    <input
+                        class='form-control'
+                        type='email'
+                        name='login-email'
+                        ng-model='loginCtrl.userInfo.email'
+                        placeholder='email'
+                        required>
+                    <input
+                        class='form-control'
+                        type='password'
+                        name='login-password'
+                        ng-model='loginCtrl.userInfo.password'
+                        placeholder='password'
+                        min-length='8'
+                        required>
+                    <input class='login-btn btn btn-primary' type='submit' value='login'>
+                </form>
 
-            <p>
-                *Password must be 8 or more characters*
-            </p>
+                <p>
+                    *Password must be 8 or more characters*
+                </p>
+
+            </div>
 
         </div>
 
-    </div>
+    </main>
 
 </section>
