@@ -54,6 +54,12 @@
                 controller: 'AccountController',
                 controllerAs: 'accountCtrl'
             })
+            .state('favorites', {
+                url: '/my-account/favorites',
+                templateUrl: '/js/templates/favorites.template.html',
+                controller: 'FavoritesController',
+                controllerAs: 'favCtrl'
+            })
             .state('login', {
                 url: '/login',
                 templateUrl: '/js/templates/login.template.html',
