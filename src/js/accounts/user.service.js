@@ -13,7 +13,6 @@
             createUser: createUser
         };
 
-        //TODO Add $http post to create user account
         function createUser(nameFirst, nameLast, userEmail, userPassword) {
             console.log(nameFirst, nameLast, userEmail, userPassword);
             //TODO Add $q.reject for if statement
