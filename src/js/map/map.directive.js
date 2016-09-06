@@ -52,7 +52,10 @@
                     title: (location.id).toString()
                 });
 
-                marker.content = '<div class="infoWindowContent">' + location.address + '</div>';
+                marker.content =
+                    '<div class="infoWindowContent">\
+                        <a class="marker-address">' + location.address + '</a>\
+                    </div>';
 
                 google.maps.event.addListener(marker, 'click', function(){
                     infoWindow.setContent('<h2>' + marker.title + '</h2>' + marker.content);

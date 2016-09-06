@@ -10,6 +10,9 @@
                     <th class='address-field'>
                         Address
                     </th>
+                    <th>
+                        Save
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -19,6 +22,9 @@
                     </td>
                     <td>
                         <a ui-sref='condo-info({condoId: condo.id, address: condo.address})'>{{condo.address}}</a>
+                    </td>
+                    <td>
+                        <i class="fa fa-heart" aria-hidden="true"></i>
                     </td>
                 </tr>
             </tbody>
