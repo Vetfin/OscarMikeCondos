@@ -26,7 +26,7 @@
                 method: 'post',
                 headers: {
                     'Content-Type': 'application/json',
-                    'accept': 'json'
+                    'Accept': 'json'
                 },
                 data: angular.toJson({
                     'user': {
