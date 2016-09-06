@@ -20,6 +20,11 @@
         <script src="https://use.fontawesome.com/8982efdf4a.js"></script>
     </head>
     <body>
+        <header ng-controller='LoginController as loginCtrl'>
+            <p ng-show='loginCtrl.loggedIn()'>
+                Welcome {{loginCtrl.userInfo.first_name}}!
+            </p>
+        </header>
         <nav class='navbar navbar-default'>
             <div class='container-fluid'>
                 <div class='navbar-header'>

@@ -46,12 +46,13 @@
             .then(function(user) {
                 loggedInUser = user.data;
                 userId = user.data.id;
-                console.log('loggedin user', loggedInUser);
+                console.log('userId', userId);
                 localStorage
                     .setItem('loggedInUser', angular.toJson({
                         email: loginEmail,
                         user_id: userId
                     }));
+                console.log(!!userId);
                 return loggedInUser;
             });
         }

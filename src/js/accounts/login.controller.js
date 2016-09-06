@@ -12,7 +12,9 @@
 
         this.message = null;
 
-        this.loggedIn = auth.isLoggedIn;
+        this.loggedIn = function loggedIn() {
+            return auth.isLoggedIn();
+        };
 
         this.userInfo = {};
 
