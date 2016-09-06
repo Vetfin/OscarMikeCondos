@@ -2,11 +2,11 @@
     'use strict';
 
     angular.module('vacondos')
-        .controller('AuthorizationController', AuthorizationController);
+        .controller('LoginController', LoginController);
 
-    AuthorizationController.$inject = ['auth'];
+    LoginController.$inject = ['auth'];
 
-    function AuthorizationController(auth) {
+    function LoginController(auth) {
         console.log('in login');
         var that = this;
 
