@@ -52,7 +52,32 @@
                     title: (location.id).toString()
                 });
 
-                marker.content = '<div class="infoWindowContent">' + location.address + '</div>';
+                if (!location.building_id) {
+                    marker.content =
+                        '<div class="infoWindowContent">\
+                            <a class="marker-address">' + location.address + '</a>\
+                        </div>';
+                } else {                    
+                    var park;
+
+                    if (location.parking === true) {
+                        park = 'Yes';
+                    } else {
+                        park = 'No';
+                    }
+
+                    marker.content =
+                        '<div class="infoWindowContent">\
+                            <a class="marker-address">' + location.address + '</a>\
+                            <ul>\
+                                <li>Price: ' + location.price + '</li>\
+                                <li>Sq Ft: ' + location.sq_ft + '</li>\
+                                <li>Beds: ' + location.beds + '</li>\
+                                <li>Baths: ' + location.baths + '</li>\
+                                <li>Parking: ' + park + '</li>\
+                            </ul>\
+                        </div>';
+                }
 
                 google.maps.event.addListener(marker, 'click', function(){
                     infoWindow.setContent('<h2>' + marker.title + '</h2>' + marker.content);

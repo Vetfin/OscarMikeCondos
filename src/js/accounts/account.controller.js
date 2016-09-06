@@ -2,12 +2,12 @@
     'use strict';
 
     angular.module('vacondos')
-        .controller('CreateAccountController', CreateAccountController);
+        .controller('AccountController', AccountController);
 
-    CreateAccountController.$inject = ['user'];
+    AccountController.$inject = ['user'];
 
-    function CreateAccountController(user) {
-        console.log('in create account');
+    function AccountController(user) {
+        console.log('in account ctrl');
 
         var that = this;
 

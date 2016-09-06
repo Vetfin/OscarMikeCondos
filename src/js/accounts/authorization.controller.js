@@ -2,11 +2,11 @@
     'use strict';
 
     angular.module('vacondos')
-        .controller('LoginController', LoginController);
+        .controller('AuthorizationController', AuthorizationController);
 
-    LoginController.$inject = ['loginService'];
+    AuthorizationController.$inject = ['auth'];
 
-    function LoginController(loginService) {
+    function AuthorizationController(auth) {
         console.log('in login');
         var that = this;
 
@@ -14,7 +14,7 @@
 
         this.authenticate = function authenticate() {
             console.log('start auth');
-            loginService.login(that.userInfo.email, that.userInfo.password);
+            auth.login(that.userInfo.email, that.userInfo.password);
             //TODO add .then and .catch when $http included in service
 
         };

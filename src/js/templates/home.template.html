@@ -3,109 +3,122 @@
 
     <h3>Search Options: </h3>
     <h4 class='home-error'>{{homeCtrl.message}}</h4>
-    <form
-        class='main-search form-group'
-        name='main-search'
-        ng-submit='homeCtrl.goToResults()'
-        novalidate>
+    <div class='main-search-form'>
+        <form
+            class='main-search form-group'
+            name='main-search'
+            ng-submit='homeCtrl.goToResults()'
+            novalidate>
 
-        <div class='price form-inline'>
-            <label class='input-types'>Price: </label>
-            <label for='min-price'>Min $</label>
-            <input
-                class='min form-control'
-                id='min-price'
-                type='number'
-                name='min-price'
-                ng-model='homeCtrl.searchParams.min_price'
-                placeholder='0'
-                >
-            <label for='max-price'>Max $</label>
-            <input
-                class='max form-control'
-                id='max-price'
-                type='number'
-                name='max-price'
-                ng-model='homeCtrl.searchParams.max_price'
-                placeholder='No Max'
-                >
-        </div>
+            <div class='price form-inline'>
+                <label class='input-types'>Price: </label>
+                <div class='search-fields'>
+                    <label for='min-price' aria-label='min-price' sr-only></label>
+                    <input
+                        class='min form-control'
+                        id='min-price'
+                        type='number'
+                        name='min-price'
+                        ng-model='homeCtrl.searchParams.min_price'
+                        placeholder='Min Price'>
+                    <label for='max-price' aria-label='max-price' sr-only></label>
+                    <input
+                        class='max form-control'
+                        id='max-price'
+                        type='number'
+                        name='max-price'
+                        ng-model='homeCtrl.searchParams.max_price'
+                        placeholder='Max Price'>
+                </div>
+            </div>
 
-        <div class='bed form-inline'>
-            <label class='input-types'>Bedrooms: </label>
-            <label for='min-bed'>Min</label>
-            <input
-                class='min form-control'
-                id='min-bed'
-                type='number'
-                name='min-bed'
-                ng-model='homeCtrl.searchParams.min_bed'
-                placeholder='0'
-                >
-            <label for='max-bed'>Max</label>
-            <input
-                class='max form-control'
-                id='max-bed'
-                type='number'
-                name='max-price'
-                ng-model='homeCtrl.searchParams.max_bed'>
-        </div>
+            <div class='bed form-inline'>
+                <label class='input-types'>Bedrooms: </label>
+                <div class='search-fields'>
+                    <label for='min-bed' aria-label='min-bed' sr-only></label>
+                    <input
+                        class='min form-control'
+                        id='min-bed'
+                        type='number'
+                        name='min-bed'
+                        ng-model='homeCtrl.searchParams.min_bed'
+                        placeholder='Min Bedrooms'
+                        >
+                    <label for='max-bed' aria-label='max-bed' sr-only></label>
+                    <input
+                        class='max form-control'
+                        id='max-bed'
+                        type='number'
+                        name='max-bed'
+                        ng-model='homeCtrl.searchParams.max_bed'
+                        placeholder='Max Bedrooms'>
+                </div>
+            </div>
 
-        <div class='bath form-inline'>
-            <label class='input-types'>Bathrooms: </label>
-            <label for='min-bath'>Min</label>
-            <input
-                class='min form-control'
-                id='min-bath'
-                type='number'
-                name='min-bath'
-                ng-model='homeCtrl.searchParams.min_bath'
-                placeholder='0'>
-            <label for='max-bath'>Max</label>
-            <input
-                class='max form-control'
-                id='max-bath'
-                type='number'
-                name='max-bath'
-                ng-model='homeCtrl.searchParams.max_bath'>
-        </div>
+            <div class='bath form-inline'>
+                <label class='input-types'>Bathrooms: </label>
+                <div class='search-fields'>
+                    <label for='min-bath' aria-label='min-bath' sr-only></label>
+                    <input
+                        class='min form-control'
+                        id='min-bath'
+                        type='number'
+                        name='min-bath'
+                        ng-model='homeCtrl.searchParams.min_bath'
+                        placeholder='Min Bathrooms'>
+                    <label for='max-bath' aria-label='max-bath' sr-only></label>
+                    <input
+                        class='max form-control'
+                        id='max-bath'
+                        type='number'
+                        name='max-bath'
+                        ng-model='homeCtrl.searchParams.max_bath'
+                        placeholder='Max Bathrooms'>
+                </div>
+            </div>
 
-        <div class='parking'>
-            <label for='parking' class='input-types'>
-                Offstreet Parking:
-            </label>
-            <label for='parking-yes'>Yes</label>
-            <input
-                class=''
-                id='parking-yes'
-                type='radio'
-                name='parking'>
+            <div class='parking'>
+                <label for='parking' class='input-types'>
+                    Offstreet Parking:
+                </label>
+                <div class='search-fields'>
+                    <label for='parking-yes'>Yes</label>
+                    <input
+                        class=''
+                        id='parking-yes'
+                        type='radio'
+                        name='parking'>
 
-            <label for='parking-no'>No</label>
-            <input
-                class=''
-                id='parking-no'
-                type='radio'
-                name='parking'>
-        </div>
-        <div class='zipcode'>
-            <label for='zip' class='input-types'>
-                Zipcode:
-            </label>
-            <input
-                class='zip from-control'
-                id='zip'
-                type='number'
-                name='search-zipcode'
-                ng-submit='homeCtrl.searchParams.zip'
-                placeholder='zip code'>
-        </div>
+                    <label for='parking-no'>No</label>
+                    <input
+                        class=''
+                        id='parking-no'
+                        type='radio'
+                        name='parking'>
+                </div>
+            </div>
+            <div class='zipcode'>
+                <label for='zip' class='input-types'>
+                    Zipcode:
+                </label>
+                <div class='search-fields'>
+                    <input
+                        class='zip from-control'
+                        id='zip'
+                        type='number'
+                        name='search-zipcode'
+                        ng-submit='homeCtrl.searchParams.zip'
+                        placeholder='Zip Code'>
+                </div>
+            </div>
 
-        <input
-            class='condo-submit btn btn-primary btn-block'
-            type='submit'
-            value='Find My Condo'>
-    </form>
+            <input
+                class='condo-submit btn btn-primary btn-block'
+                type='submit'
+                value='Find My Condo'>
+        </form>
+    </div>
+
 
     <h2>OR</h2>
 

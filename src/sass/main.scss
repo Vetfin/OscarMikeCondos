@@ -2,6 +2,7 @@
 @import 'home';
 @import 'searchResults';
 @import 'login';
+@import 'filter';
 
 body {
     width: 100%;
@@ -11,4 +12,8 @@ body {
     display: inline;
     width: 40px;
     height: 40px;
+}
+
+.fav {
+    color: red; 
 }

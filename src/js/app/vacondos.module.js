@@ -26,6 +26,16 @@
                     searchInputs: null
                 }
             })
+            .state('condo-info', {
+                url: '/condo/:address',
+                templateUrl: '/js/templates/condo-info.template.html',
+                controller: 'CondoInfoController',
+                controllerAs: 'condoInfoCtrl',
+                params: {
+                    condoId: null,
+                    address: null
+                }
+            })
             .state('about-us', {
                 url: '/about-us',
                 templateUrl: '/js/templates/about-us.template.html',
@@ -35,20 +45,26 @@
             .state('create-account', {
                 url: '/create-account',
                 templateUrl: '/js/templates/create-account.template.html',
-                controller: 'CreateAccountController',
-                controllerAs: 'createAccountCtrl'
+                controller: 'AccountController',
+                controllerAs: 'accountCtrl'
             })
             .state('my-account', {
                 url: '/my-account',
                 templateUrl: '/js/templates/my-account.template.html',
-                controller: 'MyAccountController',
-                controllerAs: 'myAccountCtrl'
+                controller: 'AccountController',
+                controllerAs: 'accountCtrl'
+            })
+            .state('favorites', {
+                url: '/my-account/favorites',
+                templateUrl: '/js/templates/favorites.template.html',
+                controller: 'FavoritesController',
+                controllerAs: 'favCtrl'
             })
             .state('login', {
                 url: '/login',
                 templateUrl: '/js/templates/login.template.html',
-                controller: 'LoginController',
-                controllerAs: 'loginCtrl'
+                controller: 'AuthorizationController',
+                controllerAs: 'authCtrl'
             })
             .state('contact', {
                 url: '/contact',
