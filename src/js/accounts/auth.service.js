@@ -13,7 +13,8 @@
         };
 
         function login(email, password) {
-            console.log('login', email, password); //TODO add $http here
+            console.log('login', email, password);
+            //TODO add $http here
             currentUser = {}; //TODO assign returned user object here
         }
 
