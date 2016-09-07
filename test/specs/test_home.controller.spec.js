@@ -65,9 +65,9 @@
 
             assert
                 .strictEqual(
-                        mockCondosService.getAllCondos.called,
-                        1,
-                        'the condos service getAllCondos method was called'
+                    mockCondosService.getAllCondos.called,
+                    1,
+                    'the condos service getAllCondos method was called'
                 );
 
             $rootScope.$digest();
