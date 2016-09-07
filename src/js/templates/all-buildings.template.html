@@ -1,0 +1,152 @@
+<section class='all-buildings'>
+    <!-- <p class='search-msg alert alert-warning' ng-show='resultsCtrl.message'>
+        {{resultsCtrl.message}}
+    </p> -->
+    <div class='results-table table-responsive'>
+        <table class='table table-striped table-hover table-condensed'>
+            <thead>
+                <tr class=''>
+                    <th class=''>
+                        Id
+                    </th>
+                    <th class='address-field'>
+                        Address
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat='building in resultsCtrl.buildings'>
+                    <td>
+                        {{building.id}}
+                    </td>
+                    <td>
+                        <a href='#'>{{building.address}}</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <map
+        class='map'
+        id='buildings-map'
+        condos='resultsCtrl.buildings'>
+    </map>
+
+    <div class='filter-dropdown' ng-controller='HomeController as homeCtrl'>
+        <button class='filter-btn'>Filter By</button>
+        <div class='filter-content'>
+            <form
+                class='filter-search'
+                name='filter-search'
+                ng-submit='homeCtrl.goToResults()'
+                novalidate>
+
+                <div class='price'>
+                    <label class='filter-inputs'>Price: </label>
+                    <div class='filter-fields'>
+                        <input
+                            class='min'
+                            id='min-price'
+                            type='number'
+                            name='min-price'
+                            ng-model='homeCtrl.searchParams.min_price'
+                            placeholder='Min Price'
+                            >
+                        <input
+                            class='max'
+                            id='max-price'
+                            type='number'
+                            name='max-price'
+                            ng-model='homeCtrl.searchParams.max_price'
+                            placeholder='Max Price'
+                            >
+                    </div>
+
+                </div>
+
+                <div class='bed'>
+                    <label class='filter-inputs'>Bedrooms: </label>
+                    <div class='filter-fields'>
+                        <input
+                            class='min'
+                            id='min-bed'
+                            type='number'
+                            name='min-bed'
+                            ng-model='homeCtrl.searchParams.min_bed'
+                            placeholder='Min Bed'
+                            >
+                        <input
+                            class='max'
+                            id='max-bed'
+                            type='number'
+                            name='max-price'
+                            ng-model='homeCtrl.searchParams.max_bed'
+                            placeholder='Max Bed'>
+                    </div>
+                </div>
+
+                <div class='bath'>
+                    <label class='filter-inputs'>Bathrooms: </label>
+                    <div class='filter-fields'>
+                        <input
+                            class='min'
+                            id='min-bath'
+                            type='number'
+                            name='min-bath'
+                            ng-model='homeCtrl.searchParams.min_bath'
+                            placeholder='Min Bath'>
+                        <input
+                            class='max'
+                            id='max-bath'
+                            type='number'
+                            name='max-bath'
+                            ng-model='homeCtrl.searchParams.max_bath'
+                            placeholder='Max Bath'>
+                    </div>
+                </div>
+
+                <div class='parking'>
+                    <label for='parking' class='filter-inputs'>
+                        Parking:
+                    </label>
+                    <div class='filter-fields'>
+                        <label for='parking-yes'>Yes</label>
+                        <input
+                            class=''
+                            id='parking-yes'
+                            type='radio'
+                            name='parking'>
+
+                        <label for='parking-no'>No</label>
+                        <input
+                            class=''
+                            id='parking-no'
+                            type='radio'
+                            name='parking'>
+                    </div>
+                </div>
+                <div class='zipcode'>
+                    <label for='zip' class='filter-inputs'>
+                        Zipcode:
+                    </label>
+                    <div class='filter-fields'>
+                        <input
+                            class='zip'
+                            id='zip'
+                            type='number'
+                            name='search-zipcode'
+                            ng-submit='homeCtrl.searchParams.zip'
+                            placeholder='Zip Code'>
+                    </div>
+                </div>
+
+                <input
+                    class='filter-submit btn btn-primary btn-sm btn-block'
+                    type='submit'
+                    value='Find My Condo'>
+            </form>
+        </div>
+    </div>
+
+</section>

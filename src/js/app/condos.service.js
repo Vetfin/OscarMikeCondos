@@ -8,11 +8,13 @@
 
     function CondosService($http, $q) {
         var searchResults = [];
+        var buildingResults = [];
 
         return {
             getAllBuildings: getAllBuildings,
             getAllCondos: getAllCondos,
             getSearchResults: getSearchResults,
+            getBuildingResults: getBuildingResults,
             saveFavoriteCondo: saveFavoriteCondo
         };
 
@@ -25,6 +27,9 @@
             return searchResults;
         }
 
+        function getBuildingResults() {
+            return buildingResults;
+        }
         /**
          * Get all VA approved buildings
          * @return {Promise}    XMLHttpRequest obj that can
@@ -36,7 +41,8 @@
                 url: 'https://arcane-spire-51321.herokuapp.com/buildings.json'
             })
             .then(function(results) {
-                searchResults = results.data;
+                buildingResults = results.data;
+                console.log('building results', buildingResults);
                 return results;
             });
         }

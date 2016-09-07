@@ -53,12 +53,12 @@
          * and go to search-results view
          * @return {void}
          */
-        this.goToAll = function searchAll() {
+        this.goToAll = function seeAllVaApprovedBuildings() {
             condos
                 .getAllBuildings()
                 .then(function(data) {
                     console.log('in then for goToAll', data);
-                    $state.go('search-results', {searchInputs: that.searchParams});
+                    $state.go('all-buildings');
                 })
                 .catch(function(err) {
                     console.error(err.status);

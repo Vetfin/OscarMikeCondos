@@ -26,6 +26,12 @@
                     searchInputs: null
                 }
             })
+            .state('all-buildings', {
+                url: '/all-buildings',
+                templateUrl: '/js/templates/all-buildings.template.html',
+                controller: 'SearchResultsController',
+                controllerAs: 'resultsCtrl'
+            })
             .state('about-us', {
                 url: '/about-us',
                 templateUrl: '/js/templates/about-us.template.html'

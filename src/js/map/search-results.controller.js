@@ -10,6 +10,9 @@
         var that = this;
 
         this.message = null;
+
+        this.buildings = condos.getBuildingResults();
+
         /** Assign retrieved data here to use in map directive **/
         this.results = condos.getSearchResults();
 
@@ -27,7 +30,7 @@
         };
 
         this.saveFavorite = function saveFavorite(id) {
-            condos.saveFavoriteCondo(id); 
+            condos.saveFavoriteCondo(id);
         };
     }
 
