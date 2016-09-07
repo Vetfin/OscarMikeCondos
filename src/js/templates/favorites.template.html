@@ -1,21 +1,21 @@
 <section class='favorites'>
+    
     <header>
         <h1>Favorites</h1>
     </header>
 
     <section class='fav-condos'>
+
         <h2>Condos For Sale</h2>
-        <!-- TODO add in table and map view for saved favs -->
-        <!-- <div class='results-table table-responsive' ng-hide='resultsCtrl.message'>
-            <table
-                class='table table-striped table-hover table-condensed'
-                ng-controller='LoginController as loginCtrl'>
+
+        <div class='results-table table-responsive'>
+            <table class='table table-striped table-hover table-condensed'>
                 <thead>
-                    <tr class=''>
-                        <th class=''>
+                    <tr>
+                        <th>
                             Id
                         </th>
-                        <th class='address-field'>
+                        <th>
                             Address
                         </th>
                         <th>
@@ -30,18 +30,15 @@
                         <th>
                             Baths
                         </th>
-                        <th ng-show='loginCtrl.loggedIn()'>
-                            Fav
-                        </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat='condo in resultsCtrl.results'>
+                    <tr ng-repeat='condo in favCtrl.userFavorites'>
                         <td>
                             {{condo.id}}
                         </td>
                         <td>
-                            <a href='#'>{{condo.formatted_address}}</a>
+                            <a href='#'>{{condo.street_address}}</a>
                         </td>
                         <td>
                             {{condo.price}}
@@ -55,23 +52,11 @@
                         <td>
                             {{condo.baths}}
                         </td>
-                        <td ng-show='loginCtrl.loggedIn()'>
-                            <i
-                                class="fa fa-heart"
-                                toggle-class='fav'
-                                ng-click='resultsCtrl.saveFavorite(condo.id)'
-                                aria-hidden="true">
-                            </i>
-                        </td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <map
-            class='map'
-            id='map'
-            condos='resultsCtrl.results'>
-        </map> -->
     </section>
+
 </section>
