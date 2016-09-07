@@ -4,15 +4,20 @@
     angular.module('vacondos')
         .controller('LoginController', LoginController);
 
-    LoginController.$inject = ['$state', 'auth'];
+    LoginController.$inject = ['$state', '$stateParams', 'auth'];
 
-    function LoginController($state, auth) {
-        console.log('in login');
+    function LoginController($state, $stateParams, auth) {
         var that = this;
 
         this.message = null;
 
-        this.loggedIn = auth.isLoggedIn;
+        this.redirectMessage = $stateParams.message;
+
+        this.loggedInUser = {};
+
+        this.loggedIn = function loggedIn() {
+            return auth.isLoggedIn();
+        };
 
         this.userInfo = {};
 
@@ -20,7 +25,8 @@
             console.log('start auth');
             auth.login(that.userInfo.email, that.userInfo.password)
                 .then(function(currentUser) {
-                    console.log('logged in user', currentUser);
+                    that.loggedInUser = currentUser;
+                    console.log('loggedInUser', that.loggedInUser);
                     $state.go('home');
                 })
                 .catch(function(response) {

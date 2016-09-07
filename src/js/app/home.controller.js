@@ -31,7 +31,7 @@
          * and go to search-results view
          * @return {void}
          */
-        this.goToResults = function searchSpecific() {
+        this.goToResults = function seeVaApprovedCondosForSale() {
             condos
                 .getAllCondos(that.searchParams)
                 .then(function(data) {
@@ -53,21 +53,8 @@
          * and go to search-results view
          * @return {void}
          */
-        this.goToAll = function searchAll() {
-            condos
-                .getAllBuildings()
-                .then(function(data) {
-                    console.log('in then for goToAll', data);
-                    $state.go('search-results', {searchInputs: that.searchParams});
-                })
-                .catch(function(err) {
-                    console.error(err.status);
-                    if (err.status >= 400 && err.status < 500) {
-                        that.message = 'Unable to retrieve buildings, check your inputs';
-                    } else if (err.status >= 500 && err.status < 600) {
-                        that.message = 'Oops! Something went wrong on our side. Hold wait one then try again';
-                    }
-                });
+        this.goToAll = function seeAllVaApprovedBuildings() {
+            $state.go('all-buildings');        
         };
 
     }

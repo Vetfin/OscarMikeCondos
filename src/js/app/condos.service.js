@@ -7,12 +7,17 @@
     CondosService.$inject = ['$http', '$q'];
 
     function CondosService($http, $q) {
-        var searchResults = [];
+        var searchResults = null;
+        var buildingResults = [];
+
+        getAllBuildings();
 
         return {
             getAllBuildings: getAllBuildings,
             getAllCondos: getAllCondos,
-            getSearchResults: getSearchResults
+            getSearchResults: getSearchResults,
+            getBuildingResults: getBuildingResults,
+            saveFavoriteCondo: saveFavoriteCondo
         };
 
         /**
@@ -24,6 +29,9 @@
             return searchResults;
         }
 
+        function getBuildingResults() {
+            return buildingResults;
+        }
         /**
          * Get all VA approved buildings
          * @return {Promise}    XMLHttpRequest obj that can
@@ -35,8 +43,21 @@
                 url: 'https://arcane-spire-51321.herokuapp.com/buildings.json'
             })
             .then(function(results) {
-                searchResults = results.data;
+                buildingResults = results.data;
+                console.log('building results', buildingResults);
                 return results;
+            })
+            .catch(function(err) {
+                if (err.status >= 400 && err.status < 500) {
+                    console.error(
+                        'Hmm, your search failed, check your request please',
+                        err.status
+                    );
+                } else if (err.status >= 500 && err.status < 600) {
+                    console.error(
+                        'Oops! Something went wrong on our side. Hold wait one then try again'
+                    );
+                }
             });
         }
 
@@ -81,6 +102,13 @@
             .then(function(results) {
                 searchResults = results.data;
                 return results;
+            });
+        }
+
+        function saveFavoriteCondo(condoId) {
+            return $http({
+                url: 'https://arcane-spire-51321.herokuapp.com/condos/' + condoId + '/favorite.json',
+                method: 'post'
             });
         }
 

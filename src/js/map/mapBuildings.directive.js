@@ -2,14 +2,14 @@
     'use strict';
 
     angular.module('vacondos')
-        .directive('map', Map);
+        .directive('buildingsMap', BuildingsMap);
 
-    function Map() {
+    function BuildingsMap() {
         return {
             restrict: 'E',
             template: '',
             scope: {
-                condos: '='
+                buildings: '='
             },
             link: link
         };
@@ -27,13 +27,13 @@
             var infoWindow = new google.maps.InfoWindow();
 
             /** Once array has been updates, then create markers **/
-            scope.$watchCollection('condos', function(condos) {
-                if (!condos.data) {
-                    condos.forEach(createMarker);
-                    console.log(condos);
+            scope.$watchCollection('buildings', function(buildings) {
+                if (!buildings.data) {
+                    buildings.forEach(createMarker);
+                    console.log(buildings);
                 } else {
-                    condos.data.forEach(createMarker);
-                    console.log(condos);
+                    buildings.data.forEach(createMarker);
+                    console.log(buildings);
                 }
 
             });
@@ -41,7 +41,7 @@
             /**
              * Create map marker w/ info window for each location with lat/lng
              * and adds info window content
-             * @param  {Object} location Location data (condo or building)
+             * @param  {Object} location Location data (building)
              * @return {void}
              */
             function createMarker(location){
