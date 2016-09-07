@@ -2,7 +2,8 @@
     'use strict';
 
     angular.module('vacondos', ['ui.router'])
-        .config(vacondosConfig);
+        .config(vacondosConfig)
+        .run(vaStartup);
 
     vacondosConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 
@@ -46,19 +47,24 @@
                 url: '/my-account',
                 templateUrl: '/js/templates/my-account.template.html',
                 controller: 'AccountController',
-                controllerAs: 'accountCtrl'
+                controllerAs: 'accountCtrl',
+                secure: true
             })
             .state('favorites', {
                 url: '/my-account/favorites',
                 templateUrl: '/js/templates/favorites.template.html',
                 controller: 'FavoritesController',
-                controllerAs: 'favCtrl'
+                controllerAs: 'favCtrl', 
+                secure: true
             })
             .state('login', {
                 url: '/login',
                 templateUrl: '/js/templates/login.template.html',
                 controller: 'LoginController',
-                controllerAs: 'loginCtrl'
+                controllerAs: 'loginCtrl',
+                params: {
+                    message: null
+                }
             })
             .state('contact', {
                 url: '/contact',
@@ -75,6 +81,20 @@
             .state('404', {
                 url: '/404',
                 templateUrl: '/js/templates/404.template.html'
+            });
+        }
+
+        vaStartup.$inject = ['$rootScope', '$state', 'auth'];
+
+        function vaStartup($rootScope, $state, auth) {
+            $rootScope.$on('$stateChangeStart', function(e, toState) {
+                if (toState.secure && !auth.isLoggedIn()) {
+                    e.preventDefault();
+                    console.error('You must log in to access this');
+                    $state.go('login', {
+                        message: 'You must log in first!'
+                    });
+                }
             });
     }
 
