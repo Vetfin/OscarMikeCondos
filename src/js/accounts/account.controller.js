@@ -13,9 +13,13 @@
 
         this.message = null;
 
+        this.currentUser = {};
+
         this.userInfo = {};
 
-        this.loggedInUser = auth.getLoggedInUser();
+        this.findloggedInUser = function findloggedInUser() {
+            that.currentUser = auth.getLoggedInUser();
+        };
 
         this.createAccount = function createAccount() {
             console.log('start creating new account');
@@ -33,7 +37,7 @@
             })
             .catch(function(err) {
                 console.error('unable to create account', err.status);
-                
+
                 if (err.status >= 400 && err.status < 500) {
                     that.message = 'Invalid user information, try again';
                 } else if (err.status >= 500 && err.status < 600) {
