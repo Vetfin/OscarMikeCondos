@@ -31,7 +31,7 @@
          * and go to search-results view
          * @return {void}
          */
-        this.goToResults = function searchSpecific() {
+        this.goToResults = function seeVaApprovedCondosForSale() {
             condos
                 .getAllCondos(that.searchParams)
                 .then(function(data) {
