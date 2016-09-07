@@ -7,8 +7,10 @@
     CondosService.$inject = ['$http', '$q'];
 
     function CondosService($http, $q) {
-        var searchResults = [];
+        var searchResults = null;
         var buildingResults = [];
+
+        getAllBuildings();
 
         return {
             getAllBuildings: getAllBuildings,
@@ -44,6 +46,18 @@
                 buildingResults = results.data;
                 console.log('building results', buildingResults);
                 return results;
+            })
+            .catch(function(err) {
+                if (err.status >= 400 && err.status < 500) {
+                    console.error(
+                        'Hmm, your search failed, check your request please',
+                        err.status
+                    );
+                } else if (err.status >= 500 && err.status < 600) {
+                    console.error(
+                        'Oops! Something went wrong on our side. Hold wait one then try again'
+                    );
+                }
             });
         }
 
