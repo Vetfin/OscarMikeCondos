@@ -4,9 +4,9 @@
     angular.module('vacondos')
         .controller('AccountController', AccountController);
 
-    AccountController.$inject = ['$state', 'user'];
+    AccountController.$inject = ['$state', 'user', 'auth'];
 
-    function AccountController($state, user) {
+    function AccountController($state, user, auth) {
         console.log('in account ctrl');
 
         var that = this;
@@ -15,7 +15,7 @@
 
         this.userInfo = {};
 
-        this.loggedInUser = user.currentUser;
+        this.loggedInUser = auth.getLoggedInUser();
 
         this.createAccount = function createAccount() {
             console.log('start creating new account');
