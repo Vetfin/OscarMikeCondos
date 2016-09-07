@@ -20,7 +20,8 @@
             logout: logout,
             getLoggedInUser: getLoggedInUser,
             isLoggedIn: isLoggedIn,
-            getUserToken: getUserToken
+            getUserToken: getUserToken,
+            setLoggedInUser: setLoggedInUser
         };
 
         function init() {
@@ -83,6 +84,10 @@
             return loggedInUser;
         }
 
+        function setLoggedInUser(userObject) {
+            loggedInUser = userObject;
+        }
+
         function isLoggedIn() {
             return !!userId;
         }
@@ -102,5 +107,6 @@
         function loginError(message) {
             return $q.reject(new Error(message));
         }
+
     }
 })();

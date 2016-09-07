@@ -4,9 +4,9 @@
     angular.module('vacondos')
         .factory('condos', CondosService);
 
-    CondosService.$inject = ['$http', '$q'];
+    CondosService.$inject = ['$http', '$q', 'auth'];
 
-    function CondosService($http, $q) {
+    function CondosService($http, $q, auth) {
         var searchResults = null;
         var buildingResults = [];
 
@@ -112,6 +112,9 @@
                 headers: {
                     token: currentUserToken
                 }
+            })
+            .then(function(results) {
+                auth.setLoggedInUser(results.data);
             });
         }
 
