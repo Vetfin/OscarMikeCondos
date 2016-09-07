@@ -73,8 +73,11 @@
                                 aria-expanded='false'>My Account
                                 <span class='caret'></span>
                             </a>
-                            <ul class='dropdown-menu' role='menu'>
-                                <li><a ui-sref='login'>Login</a></li>
+                            <ul
+                                class='dropdown-menu'
+                                role='menu'
+                                ng-controller='LoginController as loginCtrl'>
+                                <li ng-hide='loginCtrl.isLoggedIn()'><a ui-sref='login'>Login</a></li>
                                 <li><a ui-sref='my-account'>My Account</a></li>
                                 <li class='divider'></li>
                                 <li><a ui-sref='favorites'>Favorites</a></li>
@@ -82,10 +85,11 @@
                                 <li class='divider'></li>
                                 <li><a ui-sref='contact'>Contact</a></li>
                                 <li><a ui-sref='create-account'>Create Account</a></li>
-                                <li
-                                    ng-controller='LogoutController as logoutCtrl'>
-                                    <a ui-sref='login' ng-click='logoutCtrl.logOut()'>Logout</a>
-                                </li>
+                                <li ng-controller='LogoutController as logoutCtrl'>
+                                    <a ui-sref='login' ng-click='logoutCtrl.logOut()'>
+                                        Logout
+                                    </a>
+                                </li>                                                      
                             </ul>
                         </li>
 
