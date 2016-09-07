@@ -16,7 +16,7 @@
         /** Assign retrieved data here to use in map directive **/
         this.results = condos.getSearchResults();
 
-        if (this.results.length === 0 || !this.results) {
+        if (!this.results) {
             that.message = 'No searches currently, go to home';
         }
 
