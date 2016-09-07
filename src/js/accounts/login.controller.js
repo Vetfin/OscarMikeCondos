@@ -7,12 +7,11 @@
     LoginController.$inject = ['$state', '$stateParams', 'auth'];
 
     function LoginController($state, $stateParams, auth) {
-        console.log('in login');
         var that = this;
 
         this.message = null;
 
-        this.redirectMessage = $stateParams.message; 
+        this.redirectMessage = $stateParams.message;
 
         this.loggedInUser = {};
 
