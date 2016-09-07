@@ -34,9 +34,6 @@
 
             mockAuthService.isLoggedIn = function() {
                 mockAuthService.isLoggedIn.called++;
-                var def = $q.defer();
-                def.resolve();
-                return def.promise;
             };
             mockAuthService.isLoggedIn.called = 0;
 
@@ -67,7 +64,9 @@
 
             assert
                 .strictEqual(
-                    mockAuthService.isLoggedIn.called, 1, 'the auth service isLoggedIn method was called'
+                    mockAuthService.isLoggedIn.called,
+                    1,
+                    'the auth service isLoggedIn method was called'
                 );
 
             $rootScope.$digest();

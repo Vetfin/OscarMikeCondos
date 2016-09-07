@@ -51,24 +51,18 @@
             assert.isNull(accountController.message, 'ctrl has message property');
             assert.isObject(accountController.userInfo, 'ctrl has userInfo object');
             assert.isObject(accountController.currentUser, 'ctrl has currentUser object');
-            assert.isFunction(accountController.findloggedInUser, 'ctrl has findloggedInUser fn');
         });
 
         test('findloggedInUser fn successfully gets currently logged in user', function() {
-            accountController.findloggedInUser();
+            var returnedUser = accountController.currentUser;
 
-            assert
-                .strictEqual(
-                    mockAuthService.getLoggedInUser.called,
-                    1,
-                    'the auth service getLoggedInUser method was called'
-                );
+            assert.isObject(returnedUser,'the auth service getLoggedInUser method was called');
 
             $rootScope.$digest();
         });
 
         // test('createAccount fn successfully creates new user', function() {
-        //     accountController.createAccount();
+        //     accountController.createAccount(nameFirst,nameLast, email, password);
         //
         //     assert
         //         .strictEqual(
