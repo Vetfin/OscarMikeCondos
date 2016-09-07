@@ -13,6 +13,18 @@
                         Address
                     </th>
                     <th>
+                        Price
+                    </th>
+                    <th>
+                        SqFt
+                    </th>
+                    <th>
+                        Beds
+                    </th>
+                    <th>
+                        Baths
+                    </th>
+                    <th>
                         Save
                     </th>
                 </tr>
@@ -23,13 +35,25 @@
                         {{condo.id}}
                     </td>
                     <td>
-                        <a href='#'>{{condo.address}}</a>
+                        <a href='#'>{{condo.formatted_address}}</a>
+                    </td>
+                    <td>
+                        {{condo.price}}
+                    </td>
+                    <td>
+                        {{condo.sq_ft}}
+                    </td>
+                    <td>
+                        {{condo.beds}}
+                    </td>
+                    <td>
+                        {{condo.baths}}
                     </td>
                     <td>
                         <i
                             class="fa fa-heart"
                             toggle-class='fav'
-                            ng-click='resultsCtrl.saveFavorite(condo.id)' 
+                            ng-click='resultsCtrl.saveFavorite(condo.id)'
                             aria-hidden="true">
                         </i>
                     </td>
