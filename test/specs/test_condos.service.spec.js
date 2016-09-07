@@ -26,6 +26,10 @@
                 .respond('<h1>Mock Home Template</h1>');
 
             $httpBackend
+                .whenGET('/js/templates/all-buildings.template.html')
+                .respond('<h1>Mock All Buildings Template</h1>');
+
+            $httpBackend
                 .when(
                     'GET',
                     'https://arcane-spire-51321.herokuapp.com/condos/search.json?min_bath=0&min_bed=0&min_price=0'
@@ -33,10 +37,12 @@
                 .respond([
                     {
                         id: 1,
-                        address: '123 Elm St',
+                        formatted_address: '123 Elm St',
                         price: 400,
                         latitude: 31,
-                        longitude: 10
+                        longitude: 10,
+                        parking: true,
+                        zipcode: 20003
                     }
                 ]);
 
@@ -104,10 +110,12 @@
                     assert.isArray(results.data, 'getAllCondos returns array of condos');
                     assert.isObject(results.data[0], 'each condo is an object');
                     assert.strictEqual(results.data[0].id, 1, 'each condo has id');
-                    assert.strictEqual(results.data[0].address, '123 Elm St', 'each condo has address');
+                    assert.strictEqual(results.data[0].formatted_address, '123 Elm St', 'each condo has address');
                     assert.strictEqual(results.data[0].price, 400, 'each condo has price');
                     assert.strictEqual(results.data[0].latitude, 31, 'each condo has latitude');
                     assert.strictEqual(results.data[0].longitude, 10, 'each condo has longitude');
+                    assert.isBoolean(results.data[0].parking, 'each condo has parking property');
+                    assert.strictEqual(results.data[0].zipcode, 20003, 'each condo has a zip code');
                     done();
                 })
                 .catch(function(err) {

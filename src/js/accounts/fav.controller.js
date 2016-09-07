@@ -4,7 +4,14 @@
     angular.module('vacondos')
         .controller('FavoritesController', FavoritesController);
 
-    function FavoritesController() {
-        console.log('in favorites ctrl');
+    FavoritesController.$inject = ['auth'];
+
+    function FavoritesController(auth) {
+
+        this.loggedInUser = auth.getLoggedInUser();
+
+        this.userFavorites = this.loggedInUser.favorites;
+        console.log(this.userFavorites);
+
     }
 })();

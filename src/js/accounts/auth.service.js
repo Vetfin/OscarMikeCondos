@@ -11,13 +11,34 @@
     function AuthorizationService($http, $q) {
         var loggedInUser = null;
         var userId = null;
+        var userToken = null;
+
+        init();
 
         return {
             login: login,
             logout: logout,
             getLoggedInUser: getLoggedInUser,
-            isLoggedIn: isLoggedIn
+            isLoggedIn: isLoggedIn,
+            getUserToken: getUserToken
         };
+
+        function init() {
+            var currentUser;
+
+            try {
+                currentUser = JSON.parse(localStorage.getItem('loggedInUser'));
+            } catch(err) {
+                //does not matter if loggedInUser does not exist or is invalid
+                //because user will just log in with form
+            }
+
+            if (currentUser) {
+                loggedInUser = currentUser.user_data;
+                userId = currentUser.user_id;
+                userToken = currentUser.user_token;
+            }
+        }
 
         function login(loginEmail, loginPassword) {
             if (typeof( loginEmail ) !== 'string' ||
@@ -30,26 +51,29 @@
             }
 
             return $http({
-                url: 'https://arcane-spire-51321.herokuapp.com/sessions.json',
+                url: 'https://arcane-spire-51321.herokuapp.com/users/login.json',
                 method: 'post',
-                header: {
+                headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'json'
                 },
-                data: angular.toJson({
+                data: {
                     user: {
                         'email': loginEmail,
                         'password': loginPassword
                     }
-                })
+                }
             })
             .then(function(user) {
                 loggedInUser = user.data;
                 userId = user.data.id;
+                userToken = user.data.token;
                 localStorage
                     .setItem('loggedInUser', angular.toJson({
                         email: loginEmail,
-                        user_id: userId
+                        user_id: userId,
+                        user_token: userToken,
+                        user_data: loggedInUser
                     }));
                 return loggedInUser;
             });
@@ -63,26 +87,16 @@
             return !!userId;
         }
 
+        function getUserToken() {
+            return userToken;
+        }
+
         function logout() {
+            console.log('in logout');
             loggedInUser = null;
             userId = null;
+            userToken = null;
             localStorage.removeItem('loggedInUser');
-            console.log('logged out');
-            //TODO Check CORS error with call below
-            // $http({
-            //     url: 'https://arcane-spire-51321.herokuapp.com/sessions/' + userId,
-            //     method: 'delete'
-            // })
-            // .then(function() {
-            //     console.log('in logout');
-            //     loggedInUser = null;
-            //     userId = null;
-            //     localStorage.removeItem('loggedInUser');
-            // })
-            // .catch(function(err) {
-            //     console.error('Unable to end session', err.status);
-            // });
-
         }
 
         function loginError(message) {

@@ -24,6 +24,10 @@
                 .whenGET('/js/templates/search-results.template.html')
                 .respond('<h1>Mock Search Results Template</h1>');
 
+            $httpBackend
+                .whenGET('/js/templates/all-buildings.template.html')
+                .respond('<h1>Mock All Buildings Template</h1>');
+
             mockCondosService.getAllBuildings = function() {
                 mockCondosService.getAllBuildings.called++;
                 var def = $q.defer();
@@ -61,22 +65,9 @@
 
             assert
                 .strictEqual(
-                        mockCondosService.getAllCondos.called,
-                        1,
-                        'the condos service getAllCondos method was called'
-                );
-
-            $rootScope.$digest();
-        });
-
-        test('goToAll will search for all buildings', function() {
-            homeController.goToAll();
-
-            assert
-                .strictEqual(
-                        mockCondosService.getAllBuildings.called,
-                        1,
-                        'the condos service getAllBuildings method was called'
+                    mockCondosService.getAllCondos.called,
+                    1,
+                    'the condos service getAllCondos method was called'
                 );
 
             $rootScope.$digest();
