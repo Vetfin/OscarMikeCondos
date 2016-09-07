@@ -64,21 +64,10 @@
         }
 
         function logout() {
-
-            $http({
-                url: 'https://arcane-spire-51321.herokuapp.com/sessions/' + userId,
-                method: 'delete'
-            })
-            .then(function() {
-                console.log('in logout');
-                loggedInUser = null;
-                userId = null;
-                localStorage.removeItem('loggedInUser');
-            })
-            .catch(function(err) {
-                console.error('Unable to end session', err.status);
-            });
-
+            console.log('in logout');
+            loggedInUser = null;
+            userId = null;
+            localStorage.removeItem('loggedInUser');
         }
 
         function loginError(message) {
