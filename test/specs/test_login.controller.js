@@ -45,7 +45,7 @@
 
         test('login controller has expected data', function() {
             assert.isNull(loginController.message, 'login controller has message property');
-            assert.isObject(loginController.userInfo, 'login controler has userInfo object');
+            assert.isObject(loginController.userInfo, 'login controller has userInfo object');
             assert.isFunction(loginController.loggedIn, 'controller has method for determining login status');
             assert.isObject(loginController.loggedInUser, 'controller has loggedInUser object');
             assert.isFunction(loginController.authenticate, 'controller has authenticate function');

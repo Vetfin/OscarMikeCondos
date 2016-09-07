@@ -44,6 +44,7 @@
             assert.isFunction(auth.getLoggedInUser, 'getLoggedInUser fn exists');
             assert.isFunction(auth.isLoggedIn, 'isLoggedIn fn exists');
             assert.isFunction(auth.logout, 'logout fn exists');
+            assert.isFunction(auth.getUserToken, 'getUserToken fn exists');
         });
 
         test('login successfully returns user object', function(done) {
