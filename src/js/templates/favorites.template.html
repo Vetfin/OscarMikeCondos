@@ -1,9 +1,77 @@
 <section class='favorites'>
-    <h1>Favorites</h1>
-    <div class='fav-buildings'>
-        <h2>VA Loan Approved Buildings</h2>
-    </div>
-    <div class='fav-condos'>
+    <header>
+        <h1>Favorites</h1>
+    </header>
+
+    <section class='fav-condos'>
         <h2>Condos For Sale</h2>
-    </div>
+        <!-- TODO add in table and map view for saved favs -->
+        <!-- <div class='results-table table-responsive' ng-hide='resultsCtrl.message'>
+            <table
+                class='table table-striped table-hover table-condensed'
+                ng-controller='LoginController as loginCtrl'>
+                <thead>
+                    <tr class=''>
+                        <th class=''>
+                            Id
+                        </th>
+                        <th class='address-field'>
+                            Address
+                        </th>
+                        <th>
+                            Price
+                        </th>
+                        <th>
+                            SqFt
+                        </th>
+                        <th>
+                            Beds
+                        </th>
+                        <th>
+                            Baths
+                        </th>
+                        <th ng-show='loginCtrl.loggedIn()'>
+                            Fav
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat='condo in resultsCtrl.results'>
+                        <td>
+                            {{condo.id}}
+                        </td>
+                        <td>
+                            <a href='#'>{{condo.formatted_address}}</a>
+                        </td>
+                        <td>
+                            {{condo.price}}
+                        </td>
+                        <td>
+                            {{condo.sq_ft}}
+                        </td>
+                        <td>
+                            {{condo.beds}}
+                        </td>
+                        <td>
+                            {{condo.baths}}
+                        </td>
+                        <td ng-show='loginCtrl.loggedIn()'>
+                            <i
+                                class="fa fa-heart"
+                                toggle-class='fav'
+                                ng-click='resultsCtrl.saveFavorite(condo.id)'
+                                aria-hidden="true">
+                            </i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <map
+            class='map'
+            id='map'
+            condos='resultsCtrl.results'>
+        </map> -->
+    </section>
 </section>
