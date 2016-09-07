@@ -3,7 +3,7 @@
 
     var assert = chai.assert;
 
-    suite('condos service', function() {
+    suite('auth service', function() {
         var $rootScope, $httpBackend, auth;
 
         setup(module('vacondos'));
@@ -37,8 +37,8 @@
             assert.isFunction(auth.login, 'login fn exists');
             assert.isFunction(auth.getLoggedInUser, 'getLoggedInUser fn exists');
             assert.isFunction(auth.isLoggedIn, 'isLoggedIn fn exists');
-            
-            assert.isFunction(auth.loginError, 'logout fn exists');
+            assert.isFunction(auth.logout, 'logout fn exists');
         });
+
     });
 })();
