@@ -11,12 +11,14 @@
     function AuthorizationService($http, $q) {
         var loggedInUser = null;
         var userId = null;
+        var userToken = null;
 
         return {
             login: login,
             logout: logout,
             getLoggedInUser: getLoggedInUser,
-            isLoggedIn: isLoggedIn
+            isLoggedIn: isLoggedIn,
+            getUserToken: getUserToken
         };
 
         function login(loginEmail, loginPassword) {
@@ -30,26 +32,28 @@
             }
 
             return $http({
-                url: 'https://arcane-spire-51321.herokuapp.com/sessions.json',
+                url: 'https://arcane-spire-51321.herokuapp.com/users/login.json',
                 method: 'post',
-                header: {
+                headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'json'
                 },
-                data: angular.toJson({
+                data: {
                     user: {
                         'email': loginEmail,
                         'password': loginPassword
                     }
-                })
+                }
             })
             .then(function(user) {
                 loggedInUser = user.data;
                 userId = user.data.id;
+                userToken = user.data.token;
                 localStorage
                     .setItem('loggedInUser', angular.toJson({
                         email: loginEmail,
-                        user_id: userId
+                        user_id: userId,
+                        user_token: userToken
                     }));
                 return loggedInUser;
             });
@@ -63,10 +67,15 @@
             return !!userId;
         }
 
+        function getUserToken() {
+            return userToken;
+        }
+
         function logout() {
             console.log('in logout');
             loggedInUser = null;
             userId = null;
+            userToken = null;
             localStorage.removeItem('loggedInUser');
         }
 
