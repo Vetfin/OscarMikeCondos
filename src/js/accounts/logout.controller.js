@@ -7,8 +7,6 @@
     LogoutController.$inject = ['$state', 'auth'];
 
     function LogoutController($state, auth) {
-        this.loggedIn = auth.isLoggedIn;
-
         this.logOut = function logOut() {
             auth.logout();
             $state.go('home');
