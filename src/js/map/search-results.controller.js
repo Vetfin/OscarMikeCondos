@@ -4,9 +4,9 @@
     angular.module('vacondos')
         .controller('SearchResultsController', SearchResultsController);
 
-    SearchResultsController.$inject = ['$stateParams', '$state', 'condos'];
+    SearchResultsController.$inject = ['$stateParams', '$state', 'condos', 'auth'];
 
-    function SearchResultsController($stateParams, $state, condos) {
+    function SearchResultsController($stateParams, $state, condos, auth) {
         var that = this;
 
         this.message = null;
@@ -29,8 +29,26 @@
             google.maps.event.trigger(selectedMarker, 'click');
         };
 
-        this.saveFavorite = function saveFavorite(id) {
-            condos.saveFavoriteCondo(id);
+        this.userToken = auth.getUserToken();
+
+        this.saveFavorite = function saveFavorite(condoId) {
+            condos.saveFavoriteCondo(condoId, that.userToken)
+                .then(function(data) {
+                    console.log(data);
+                })    
+                .catch(function(err) {
+                    if (err.status >= 400 && err.status < 500) {
+                        console.error(
+                            'Hmm, your action failed, try again please',
+                            err.status
+                        );
+                    } else if (err.status >= 500 && err.status < 600) {
+                        console.error(
+                            'Oops! Something went wrong on our side. Hold wait one then try again'
+                        );
+                    }
+                });
+
         };
     }
 
