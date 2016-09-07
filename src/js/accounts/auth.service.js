@@ -13,6 +13,8 @@
         var userId = null;
         var userToken = null;
 
+        init();
+
         return {
             login: login,
             logout: logout,
@@ -20,6 +22,23 @@
             isLoggedIn: isLoggedIn,
             getUserToken: getUserToken
         };
+
+        function init() {
+            var currentUser;
+
+            try {
+                currentUser = JSON.parse(localStorage.getItem('loggedInUser'));
+            } catch(err) {
+                //does not matter if loggedInUser does not exist or is invalid
+                //because user will just log in with form
+            }
+
+            if (currentUser) {
+                loggedInUser = currentUser.user_data;
+                userId = currentUser.user_id;
+                userToken = currentUser.user_token;
+            }
+        }
 
         function login(loginEmail, loginPassword) {
             if (typeof( loginEmail ) !== 'string' ||
@@ -53,7 +72,8 @@
                     .setItem('loggedInUser', angular.toJson({
                         email: loginEmail,
                         user_id: userId,
-                        user_token: userToken
+                        user_token: userToken,
+                        user_data: loggedInUser
                     }));
                 return loggedInUser;
             });
