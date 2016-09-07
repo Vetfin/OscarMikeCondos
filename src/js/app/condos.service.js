@@ -110,7 +110,7 @@
                 url: 'https://arcane-spire-51321.herokuapp.com/condos/' + condoId + '/favorite.json',
                 method: 'post',
                 headers: {
-                    token: currentUserToken
+                    token: angular.toJson(currentUserToken)
                 }
             });
         }
