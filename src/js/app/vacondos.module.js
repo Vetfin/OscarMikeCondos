@@ -33,15 +33,20 @@
                 controller: 'SearchResultsController',
                 controllerAs: 'resultsCtrl'
             })
-            .state('about-us', {
-                url: '/about-us',
-                templateUrl: '/js/templates/about-us.template.html'
-            })
             .state('create-account', {
                 url: '/create-account',
                 templateUrl: '/js/templates/create-account.template.html',
                 controller: 'AccountController',
                 controllerAs: 'accountCtrl'
+            })
+            .state('login', {
+                url: '/login',
+                templateUrl: '/js/templates/login.template.html',
+                controller: 'LoginController',
+                controllerAs: 'loginCtrl',
+                params: {
+                    message: null
+                }
             })
             .state('my-account', {
                 url: '/my-account',
@@ -54,17 +59,12 @@
                 url: '/my-account/favorites',
                 templateUrl: '/js/templates/favorites.template.html',
                 controller: 'FavoritesController',
-                controllerAs: 'favCtrl', 
+                controllerAs: 'favCtrl',
                 secure: true
             })
-            .state('login', {
-                url: '/login',
-                templateUrl: '/js/templates/login.template.html',
-                controller: 'LoginController',
-                controllerAs: 'loginCtrl',
-                params: {
-                    message: null
-                }
+            .state('about-us', {
+                url: '/about-us',
+                templateUrl: '/js/templates/about-us.template.html'
             })
             .state('contact', {
                 url: '/contact',
