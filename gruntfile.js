@@ -82,7 +82,7 @@ module.exports = function(grunt) {
             },
             js: {
                 files: ['src/js/**/*.js'],
-                tasks: ['jshint', 'concat'] //add 'test' to middle
+                tasks: ['jshint', 'test', 'concat'] //add 'test' to middle
             },
             html: {
                 files: ['src/**/*.html', 'src/js/**/*.templates.html'],
@@ -141,6 +141,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-karma');
 
     grunt.registerTask('test', ['karma']);
-    grunt.registerTask('build', ['clean', 'jshint', 'concat', 'sass', 'copy']); //add 'test'
+    grunt.registerTask('build', ['clean', 'jshint', 'test', 'concat', 'sass', 'copy']); //add 'test'
     grunt.registerTask('default', ['build']);
 };
