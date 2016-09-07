@@ -71,6 +71,10 @@
             .state('va-info', {
                 url: '/terms',
                 templateUrl: '/js/templates/va-info.template.html'
+            })
+            .state('404', {
+                url: '/404',
+                templateUrl: '/js/templates/404.template.html'
             });
     }
 
