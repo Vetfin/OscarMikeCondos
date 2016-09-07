@@ -46,13 +46,11 @@
             .then(function(user) {
                 loggedInUser = user.data;
                 userId = user.data.id;
-                console.log('userdata', loggedInUser);
                 localStorage
                     .setItem('loggedInUser', angular.toJson({
                         email: loginEmail,
                         user_id: userId
                     }));
-                console.log(!!userId);
                 return loggedInUser;
             });
         }
@@ -66,10 +64,25 @@
         }
 
         function logout() {
-            console.log('in logout');
             loggedInUser = null;
             userId = null;
             localStorage.removeItem('loggedInUser');
+            console.log('logged out');
+            //TODO Check CORS error with call below
+            // $http({
+            //     url: 'https://arcane-spire-51321.herokuapp.com/sessions/' + userId,
+            //     method: 'delete'
+            // })
+            // .then(function() {
+            //     console.log('in logout');
+            //     loggedInUser = null;
+            //     userId = null;
+            //     localStorage.removeItem('loggedInUser');
+            // })
+            // .catch(function(err) {
+            //     console.error('Unable to end session', err.status);
+            // });
+
         }
 
         function loginError(message) {
