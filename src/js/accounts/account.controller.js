@@ -13,13 +13,9 @@
 
         this.message = null;
 
-        this.currentUser = {};
-
         this.userInfo = {};
 
-        this.findloggedInUser = function findloggedInUser() {
-            that.currentUser = auth.getLoggedInUser();
-        };
+        this.currentUser = auth.getLoggedInUser();
 
         this.createAccount = function createAccount() {
             console.log('start creating new account');
