@@ -23,10 +23,15 @@
                         {{condo.id}}
                     </td>
                     <td>
-                        <a ui-sref='condo-info({condoId: condo.id, address: condo.address})'>{{condo.address}}</a>
+                        <a href='#'>{{condo.address}}</a>
                     </td>
                     <td>
-                        <i class="fa fa-heart" toggle-class='fav' aria-hidden="true"></i>
+                        <i
+                            class="fa fa-heart"
+                            toggle-class='fav'
+                            ng-click='resultsCtrl.saveFavorite(condo.id)' 
+                            aria-hidden="true">
+                        </i>
                     </td>
                 </tr>
             </tbody>

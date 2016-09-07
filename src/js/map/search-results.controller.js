@@ -14,7 +14,7 @@
         this.results = condos.getSearchResults();
 
         if (this.results.length === 0 || !this.results) {
-            that.message = 'No searches currently, go to home'; 
+            that.message = 'No searches currently, go to home';
         }
 
         /** Save search inputs from home **/
@@ -26,6 +26,9 @@
             google.maps.event.trigger(selectedMarker, 'click');
         };
 
+        this.saveFavorite = function saveFavorite(id) {
+            condos.saveFavoriteCondo(id); 
+        };
     }
 
 })();

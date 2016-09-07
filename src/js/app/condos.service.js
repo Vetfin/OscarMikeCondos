@@ -12,7 +12,8 @@
         return {
             getAllBuildings: getAllBuildings,
             getAllCondos: getAllCondos,
-            getSearchResults: getSearchResults
+            getSearchResults: getSearchResults,
+            saveFavoriteCondo: saveFavoriteCondo
         };
 
         /**
@@ -81,6 +82,13 @@
             .then(function(results) {
                 searchResults = results.data;
                 return results;
+            });
+        }
+
+        function saveFavoriteCondo(condoId) {
+            return $http({
+                url: 'https://arcane-spire-51321.herokuapp.com/condos/' + condoId + '/favorite.json',
+                method: 'post'
             });
         }
 

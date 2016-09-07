@@ -26,16 +26,6 @@
                     searchInputs: null
                 }
             })
-            .state('condo-info', {
-                url: '/condo/:address',
-                templateUrl: '/js/templates/condo-info.template.html',
-                controller: 'CondoInfoController',
-                controllerAs: 'condoInfoCtrl',
-                params: {
-                    condoId: null,
-                    address: null
-                }
-            })
             .state('about-us', {
                 url: '/about-us',
                 templateUrl: '/js/templates/about-us.template.html'
