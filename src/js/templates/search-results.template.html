@@ -9,7 +9,7 @@
             <thead>
                 <tr class=''>
                     <th class=''>
-                        Id
+                        Unit
                     </th>
                     <th class='address-field'>
                         Address
@@ -34,7 +34,7 @@
             <tbody>
                 <tr ng-repeat='condo in resultsCtrl.results'>
                     <td>
-                        {{condo.id}}
+                        {{condo.unit}}
                     </td>
                     <td>
                         <a href='http://www.zillow.com/homedetails/{{condo.zillow_id}}_zpid/'>{{condo.formatted_address}}</a>

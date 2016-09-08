@@ -58,13 +58,13 @@
                             <a class="marker-address">' + location.address + '</a>\
                         </div>';
                 } else {
-                    var park;
+                    // var park;
 
-                    if (location.parking === true) {
-                        park = 'Yes';
-                    } else {
-                        park = 'No';
-                    }
+                    // if (location.parking === true) {
+                    //     park = 'Yes';
+                    // } else {
+                    //     park = 'No';
+                    // }
 
                     marker.content =
                         '<div class="infoWindowContent">\
@@ -74,7 +74,6 @@
                                 <li>Sq Ft: ' + location.sq_ft + '</li>\
                                 <li>Beds: ' + location.beds + '</li>\
                                 <li>Baths: ' + location.baths + '</li>\
-                                <li>Parking: ' + park + '</li>\
                             </ul>\
                         </div>';
                 }

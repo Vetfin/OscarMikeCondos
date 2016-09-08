@@ -49,7 +49,8 @@
                 var marker = new google.maps.Marker({
                     map: newMap,
                     position: new google.maps.LatLng(location.latitude, location.longitude),
-                    title: (location.id).toString()
+                    title: 'Condo For Sale'
+                    // (location.unit).toString()
                 });
 
                 if (!location.building_id) {
@@ -58,29 +59,29 @@
                             <a class="marker-address">' + location.address + '</a>\
                         </div>';
                 } else {
-                    var park;
-
-                    if (location.parking === true) {
-                        park = 'Yes';
-                    } else {
-                        park = 'No';
-                    }
+                    // var park;
+                    //
+                    // if (location.parking === true) {
+                    //     park = 'Yes';
+                    // } else {
+                    //     park = 'No';
+                    // }
 
                     marker.content =
                         '<div class="infoWindowContent">\
-                            <a class="marker-address">' + location.formatted_address + '</a>\
+                            <h3><a class="marker-address">' + location.formatted_address + '</h3></a>\
+                            <h4>Unit #: ' + location.unit + '</h4>\
                             <ul>\
                                 <li>Price: ' + location.price + '</li>\
                                 <li>Sq Ft: ' + location.sq_ft + '</li>\
                                 <li>Beds: ' + location.beds + '</li>\
                                 <li>Baths: ' + location.baths + '</li>\
-                                <li>Parking: ' + park + '</li>\
                             </ul>\
                         </div>';
                 }
 
                 google.maps.event.addListener(marker, 'click', function(){
-                    infoWindow.setContent('<h2>' + marker.title + '</h2>' + marker.content);
+                    infoWindow.setContent('<h4>' + marker.title + '</h4>' + marker.content);
                     infoWindow.open(newMap, marker);
                 });
             }
