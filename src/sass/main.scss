@@ -3,6 +3,15 @@
 @import 'searchResults';
 @import 'login';
 @import 'filter';
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
+// /*!
+//  * bootswatch v3.3.7
+//  * Homepage: http://bootswatch.com
+//  * Copyright 2012-2016 Thomas Park
+//  * Licensed under MIT
+//  * Based on Bootstrap
+// *//*!
+
 
 body {
     width: 100%;
@@ -15,5 +24,5 @@ body {
 }
 
 .fav {
-    color: red; 
+    color: red;
 }
