@@ -2,6 +2,12 @@
     <!-- <p class='search-msg alert alert-warning' ng-show='resultsCtrl.message'>
         {{resultsCtrl.message}}
     </p> -->
+    <map
+        class='map'
+        id='buildings-map'
+        condos='resultsCtrl.buildings'>
+    </map>
+    
     <div class='results-table table-responsive'>
         <table class='table table-striped table-hover table-condensed'>
             <thead>
@@ -27,13 +33,7 @@
         </table>
     </div>
 
-    <map
-        class='map'
-        id='buildings-map'
-        condos='resultsCtrl.buildings'>
-    </map>
-
-    <div class='filter-dropdown' ng-controller='HomeController as homeCtrl'>
+    <div class='filter-dropdown building-filter' ng-controller='HomeController as homeCtrl'>
         <button class='filter-btn'>Filter By</button>
         <div class='filter-content'>
             <form
@@ -148,5 +148,14 @@
             </form>
         </div>
     </div>
+
+    <a class='zillow-logo' href='http://www.zillow.com'>VA Info
+        <img
+            src="http://www.zillow.com/widgets/GetVersionedResource.htm?path=/static/logos/Zillowlogo_200x50.gif"
+            width="200"
+            height="50"
+            alt="Zillow Real Estate Search"
+            id="yui_3_18_1_1_1473349336482_389">
+    </a>
 
 </section>

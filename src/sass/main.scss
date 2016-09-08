@@ -26,3 +26,16 @@ body {
 .fav {
     color: red;
 }
+
+.all-buildings {
+    width: 100%;
+
+    .results-table {
+        width: 100%;
+    }
+}
+#buildings-map {
+    height: 600px;
+    width: 100%;
+    display: block;
+}
