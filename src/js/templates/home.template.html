@@ -1,26 +1,34 @@
 <section class='home'>
+    <div class='left-blank'></div>
+
     <h2 class='home-title'>Find your VA loan approved condo in DC!</h2>
 
     <h4 ng-cloak class='home-error'>{{homeCtrl.message}}</h4>
     <div class='main-search-form'>
         <form
-            class='main-search form-group'
+            class='main-search container'
             name='main-search'
             ng-submit='homeCtrl.goToResults()'
             novalidate>
 
-            <div class='price form-inline'>
+            <div class='price form-group form-inline row'>
                 <label class='input-types'>Price: </label>
-                <div class='search-fields'>
-                    <label for='min-price' aria-label='min-price' sr-only></label>
-                    <input
-                        class='min form-control'
-                        id='min-price'
-                        type='number'
-                        name='min-price'
-                        ng-model='homeCtrl.searchParams.min_price'
-                        placeholder='Min Price'>
-                    <label for='max-price' aria-label='max-price' sr-only></label>
+
+                <label for='min-price' aria-label='min-price' sr-only></label>
+                <div class='input-group col-lg-3'>
+                    <div class='input-group-addon'>Min</div>
+                        <input
+                            class='min form-control'
+                            id='min-price'
+                            type='number'
+                            name='min-price'
+                            ng-model='homeCtrl.searchParams.min_price'
+                            placeholder='Min Price'>
+                </div>
+
+                <label for='max-price' aria-label='max-price' sr-only></label>
+                <div class='input-group col-lg-3'>
+                    <div class='input-group-addon'>Max</div>
                     <input
                         class='max form-control'
                         id='max-price'
@@ -31,41 +39,52 @@
                 </div>
             </div>
 
-            <div class='bed form-inline'>
+            <div class='bed form-group form-inline row'>
                 <label class='input-types'>Bedrooms: </label>
-                <div class='search-fields'>
-                    <label for='min-bed' aria-label='min-bed' sr-only></label>
-                    <input
-                        class='min form-control'
-                        id='min-bed'
-                        type='number'
-                        name='min-bed'
-                        ng-model='homeCtrl.searchParams.min_bed'
-                        placeholder='Min Bedrooms'
-                        >
-                    <label for='max-bed' aria-label='max-bed' sr-only></label>
-                    <input
-                        class='max form-control'
-                        id='max-bed'
-                        type='number'
-                        name='max-bed'
-                        ng-model='homeCtrl.searchParams.max_bed'
-                        placeholder='Max Bedrooms'>
+                <div class='input-group col-lg-3'>
+                    <div class='input-group-addon'>Min</div>
+                        <label for='min-bed' aria-label='min-bed' sr-only></label>
+                        <input
+                            class='min form-control'
+                            id='min-bed'
+                            type='number'
+                            name='min-bed'
+                            ng-model='homeCtrl.searchParams.min_bed'
+                            placeholder='Min Bedrooms'
+                            >
                 </div>
+
+                <label for='max-bed' aria-label='max-bed' sr-only></label>
+                <div class='input-group col-lg-3'>
+                    <div class='input-group-addon'>Max</div>
+                        <input
+                            class='max form-control'
+                            id='max-bed'
+                            type='number'
+                            name='max-bed'
+                            ng-model='homeCtrl.searchParams.max_bed'
+                            placeholder='Max Bedrooms'>
+                    </div>
             </div>
 
-            <div class='bath form-inline'>
+            <div class='bath form-group form-inline row'>
                 <label class='input-types'>Bathrooms: </label>
-                <div class='search-fields'>
-                    <label for='min-bath' aria-label='min-bath' sr-only></label>
-                    <input
-                        class='min form-control'
-                        id='min-bath'
-                        type='number'
-                        name='min-bath'
-                        ng-model='homeCtrl.searchParams.min_bath'
-                        placeholder='Min Bathrooms'>
-                    <label for='max-bath' aria-label='max-bath' sr-only></label>
+
+                <label for='min-bath' aria-label='min-bath' sr-only></label>
+                <div class='input-group col-lg-3'>
+                    <div class='input-group-addon'>Min</div>
+                        <input
+                            class='min form-control'
+                            id='min-bath'
+                            type='number'
+                            name='min-bath'
+                            ng-model='homeCtrl.searchParams.min_bath'
+                            placeholder='Min Bathrooms'>
+                </div>
+
+                <label for='max-bath' aria-label='max-bath' sr-only></label>
+                <div class='input-group col-lg-3'>
+                    <div class='input-group-addon'>Max</div>
                     <input
                         class='max form-control'
                         id='max-bath'
@@ -112,7 +131,7 @@
             </div> -->
 
             <input
-                class='condo-submit btn btn-primary btn-block'
+                class='condo-submit btn btn-warning btn-large'
                 type='submit'
                 value='Find My Condo'>
         </form>
@@ -122,10 +141,12 @@
     <h2>OR</h2>
 
     <button
-        class='btn btn-info btn-large'
+        class='all-button btn btn-info btn-large'
         type='button'
         name='get-all'
         ng-click='homeCtrl.goToAll()'>
-            View all VA approved condos
+            View All VA Approved Buildings
     </button>
+
+    <div class='right-blank'></div>
 </section>

@@ -6,7 +6,10 @@
 }
 
 .home-title {
-    margin-top: 0;
+    padding-top: 3%;
+    margin-bottom: 1%;
+    font-weight: bold;
+    text-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
 .navbar {
@@ -15,31 +18,36 @@
 }
 
 .main-search {
-    width: 50%;
+    width: 70%;
     margin: 0 auto;
-    text-align: left;
+    text-align: center;
 
     div {
         margin-top: 2%;
     };
 
     input {
-        width: 20%;
+        width: 50%;
     };
 
     .btn {
         margin-top: 5%;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     }
 
 }
 
+.condo-submit {
+    font-size: 35px;
+}
+
+.all-button {
+    font-size: 20px;
+}
 .input-types {
     font-weight: bold;
     font-size: 20px;
     color: black;
     margin-right: 2%;
-}
-
-.search-fields {
-    display: inline;
+    vertical-align: middle;
 }
