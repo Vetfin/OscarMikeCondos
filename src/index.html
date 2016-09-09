@@ -22,11 +22,12 @@
     </head>
     <body>
         <header
-            ng-cloak
             class='login-success'
-            ng-controller='LoginController as loginCtrl'
-            ng-show='loginCtrl.loggedIn()'>
-            <p  class='text-success'>
+            ng-controller='LoginController as loginCtrl'>
+            <p>
+                We are a work in progress. Please <a ui-sref='contact'>contact us</a> if you'd like to support OscarMike Condos
+            </p>
+            <p  ng-cloak class='login-text text-success' ng-show='loginCtrl.loggedIn()'>
                 You are logged in!
             </p>
         </header>
