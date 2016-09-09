@@ -69,7 +69,7 @@
 
                     marker.content =
                         '<div class="infoWindowContent">\
-                            <h3><a class="marker-address">' + location.formatted_address + '</h3></a>\
+                            <h3><a class="marker-address">' + location.formatted_address + '</a></h3>\
                             <h4>Unit #: ' + location.unit + '</h4>\
                             <ul>\
                                 <li>Price: ' + location.price + '</li>\
