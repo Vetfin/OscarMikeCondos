@@ -2,7 +2,7 @@
 
 ##The Iron Yard - Final Project - Deployable Front End
 
-[http://oscarmikecondos.herokuapp.com/#/]
+[http://oscarmikecondos.herokuapp.com]
 
 Created by [Erik Douglas](https://github.com/eadouglas10) (Backend - Ruby on Rails) & [Stella Ma](https://github.com/sm873x) (Front End - angular)
 
