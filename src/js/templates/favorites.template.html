@@ -16,6 +16,9 @@
                             Id
                         </th>
                         <th>
+                            Unit
+                        </th>
+                        <th>
                             Address
                         </th>
                         <th>
@@ -36,6 +39,9 @@
                     <tr ng-repeat='condo in favCtrl.userFavorites'>
                         <td>
                             {{condo.id}}
+                        </td>
+                        <td>
+                            {{condo.unit}}
                         </td>
                         <td>
                             <a href='http://www.zillow.com/homedetails/{{condo.zillow_id}}_zpid/'>{{condo.street_address}}</a>
