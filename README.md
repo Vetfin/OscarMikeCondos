@@ -1,5 +1,6 @@
-# VA-Front-End
-Oscar Mike Condos - Deployable Front End
+# OscarMike Condos
+
+##The Iron Yard - Final Project - Deployable Front End
 
 Created by Erik Douglas (Backend - Ruby on Rails) & Stella Ma (Front End - angular)
 
