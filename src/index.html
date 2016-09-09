@@ -21,8 +21,12 @@
         <script src="https://use.fontawesome.com/8982efdf4a.js"></script>
     </head>
     <body>
-        <header ng-cloak ng-controller='LoginController as loginCtrl'>
-            <p ng-show='loginCtrl.loggedIn()' class='text-success'>
+        <header
+            ng-cloak
+            class='login-success'
+            ng-controller='LoginController as loginCtrl'
+            ng-show='loginCtrl.loggedIn()'>
+            <p  class='text-success'>
                 You are logged in!
             </p>
         </header>
